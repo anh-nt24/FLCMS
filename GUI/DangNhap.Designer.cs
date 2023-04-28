@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbmk = new System.Windows.Forms.Label();
+            this.lbdn = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btndn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.cbmk = new System.Windows.Forms.CheckBox();
             this.txtmk = new System.Windows.Forms.TextBox();
             this.txtten = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -45,6 +47,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.lbmk);
+            this.groupBox1.Controls.Add(this.lbdn);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btndn);
@@ -60,11 +64,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng nhập";
             // 
+            // lbmk
+            // 
+            this.lbmk.AutoSize = true;
+            this.lbmk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbmk.Location = new System.Drawing.Point(306, 252);
+            this.lbmk.Name = "lbmk";
+            this.lbmk.Size = new System.Drawing.Size(61, 22);
+            this.lbmk.TabIndex = 11;
+            this.lbmk.Text = "label2";
+            // 
+            // lbdn
+            // 
+            this.lbdn.AutoSize = true;
+            this.lbdn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbdn.Location = new System.Drawing.Point(306, 184);
+            this.lbdn.Name = "lbdn";
+            this.lbdn.Size = new System.Drawing.Size(61, 22);
+            this.lbdn.TabIndex = 10;
+            this.lbdn.Text = "label2";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI.Properties.Resources.padlock;
+            this.pictureBox2.InitialImage = global::GUI.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(239, 212);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(49, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources.user;
+            this.pictureBox1.InitialImage = global::GUI.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(239, 144);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // btndn
             // 
             this.btndn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btndn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btndn.Location = new System.Drawing.Point(361, 312);
+            this.btndn.Location = new System.Drawing.Point(353, 335);
             this.btndn.Name = "btndn";
             this.btndn.Size = new System.Drawing.Size(123, 44);
             this.btndn.TabIndex = 7;
@@ -76,7 +122,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.linkLabel1.Location = new System.Drawing.Point(443, 265);
+            this.linkLabel1.Location = new System.Drawing.Point(435, 288);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(134, 22);
             this.linkLabel1.TabIndex = 6;
@@ -88,7 +134,7 @@
             // 
             this.cbmk.AutoSize = true;
             this.cbmk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbmk.Location = new System.Drawing.Point(241, 265);
+            this.cbmk.Location = new System.Drawing.Point(233, 288);
             this.cbmk.Name = "cbmk";
             this.cbmk.Size = new System.Drawing.Size(169, 26);
             this.cbmk.TabIndex = 5;
@@ -98,52 +144,32 @@
             // 
             // txtmk
             // 
-            this.txtmk.Location = new System.Drawing.Point(310, 203);
+            this.txtmk.Location = new System.Drawing.Point(308, 212);
             this.txtmk.Multiline = true;
             this.txtmk.Name = "txtmk";
             this.txtmk.Size = new System.Drawing.Size(239, 34);
             this.txtmk.TabIndex = 4;
+            this.txtmk.Leave += new System.EventHandler(this.btnmk_leave);
             // 
             // txtten
             // 
-            this.txtten.Location = new System.Drawing.Point(310, 157);
+            this.txtten.Location = new System.Drawing.Point(308, 144);
             this.txtten.Multiline = true;
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(239, 34);
             this.txtten.TabIndex = 3;
+            this.txtten.Leave += new System.EventHandler(this.btndn_leave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(108, 83);
+            this.label1.Location = new System.Drawing.Point(101, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(602, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Nhập Ứng Dụng Quản Lý Trung Tâm Ngoại Ngữ";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.padlock;
-            this.pictureBox2.InitialImage = global::GUI.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(241, 203);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.user;
-            this.pictureBox1.InitialImage = global::GUI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(241, 157);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // DangNhap
             // 
@@ -164,14 +190,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtmk;
-        private System.Windows.Forms.TextBox txtten;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btndn;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.CheckBox cbmk;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbmk;
+        private System.Windows.Forms.Label lbdn;
+        private System.Windows.Forms.TextBox txtmk;
+        private System.Windows.Forms.TextBox txtten;
     }
 }
 

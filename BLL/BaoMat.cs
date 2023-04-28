@@ -30,7 +30,7 @@ namespace BUS
                 return sb.ToString();
             }
         }
-        public static string Macaptcha()
+        public static string Macaptcha() //tận dụng làm mật khẩu luôn
         {
             Random rd = new Random();
             string chuhoa = "";
@@ -43,10 +43,28 @@ namespace BUS
                 string s = Convert.ToString((char)rd.Next(65, 90));
                 chuhoa = chuhoa + s;
             }
-            //Chư in hoa. Chữ thường:
+            //Chữ in hoa. Chữ thường:
             string chuthuong = Convert.ToString((char)rd.Next(97, 122));
             string chuoicaptcha = sorandom1 + chuhoa + sorandom2 + chuthuong;
             return chuoicaptcha;
+        }
+        public static string Mataikhoan()
+        {
+            Random rd1 = new Random();
+            string chuhoa = "";
+
+            string sorandom1 = rd1.Next(100, 999).ToString();
+            string sorandom2 = rd1.Next(10, 99).ToString();
+
+            for (int i = 0; i < 2; i++)
+            {
+                string s = Convert.ToString((char)rd1.Next(65, 90));
+                chuhoa = chuhoa + s;
+            }
+            //Chữ in hoa. Chữ thường:
+            string chuthuong = Convert.ToString((char)rd1.Next(97, 122));
+            string chuoicaptcha = sorandom1 + chuthuong + sorandom2 + chuhoa;
+            return "ND"+chuoicaptcha;
         }
 
     }

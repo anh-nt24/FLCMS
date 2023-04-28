@@ -15,6 +15,24 @@ namespace GUI
         public TrangChu()
         {
             InitializeComponent();
+           
+            
+        }
+
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnnguoidung_Click_1(object sender, EventArgs e)
+        {
+            qlnd2.BringToFront();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            anhTrangChu1.BringToFront();
         }
     }
 }
