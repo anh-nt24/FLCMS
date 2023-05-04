@@ -207,18 +207,26 @@ namespace DAL
                 }
             }
         }
-        public DataTable LoadComboBox()
+        public DataTable LoadComboBox(string sql)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
-            string query = "select HoTen from NguoiDung";
-            using (SqlCommand command = new SqlCommand(query, connection))
+            //string sql = "select HoTen from NguoiDung";
+            using (SqlCommand command = new SqlCommand(sql, connection))
             {
-                var read = command.ExecuteReader();
-                var dt1 = new DataTable();
-                dt1.Load(read);
-                read.Dispose();
-                read = command.ExecuteReader();
-                return dt1;
+                // var read = command.ExecuteReader();
+                // var dt1 = new DataTable();
+                //dt1.Load(read);
+                //read.Dispose();
+                //read = command.ExecuteReader();
+                // return dt1;
+                SqlDataAdapter da = new SqlDataAdapter(command); //chuyen du lieu ve
+                da.SelectCommand = command;
+                DataTable dt1 = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+                da.Fill(dt1);  // đổ dữ liệu vào kho
+                                //SqlConnection conn.Close();  // đóng kết nối
+                                //đổ dữ liệu vào datagridview
+                //connection.Close();
+                return dt1; //đổ dữ liệu vào datagridview
             }
         }
         public DataTable DatagvDAL()
@@ -229,15 +237,17 @@ namespace DAL
             {
                 //bat dau truy van
                 command.CommandType = CommandType.Text;
-                SqlDataAdapter da = new SqlDataAdapter(command); //chuyen du lieu ve
-                DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-                da.Fill(dt);  // đổ dữ liệu vào kho
+                SqlDataAdapter da1 = new SqlDataAdapter(command); //chuyen du lieu ve
+                DataTable dt1 = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+                da1.Fill(dt1);  // đổ dữ liệu vào kho
                               //SqlConnection conn.Close();  // đóng kết nối
                               //đổ dữ liệu vào datagridview
-                return dt; //đổ dữ liệu vào datagridview
+                //connection .Close();
+                return dt1; //đổ dữ liệu vào datagridview
 
             }
         }
+        //hien thi du lieu len dgv
         public DataTable DatagvFind(string sql)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
@@ -245,12 +255,306 @@ namespace DAL
             {
                 //bat dau truy van
                 command.CommandType = CommandType.Text;
-                SqlDataAdapter da = new SqlDataAdapter(command); //chuyen du lieu ve
-                DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+                SqlDataAdapter da1 = new SqlDataAdapter(command); //chuyen du lieu ve
+                DataTable dt1 = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
                                                 //SqlConnection conn.Close();  // đóng kết nối
-                da.Fill(dt);               //đổ dữ liệu vào datagridview
-                return dt; //đổ dữ liệu vào datagridview
+                da1.Fill(dt1);               //đổ dữ liệu vào datagridview
+                da1.Dispose();
+                //connection.Close();
+                return dt1; //đổ dữ liệu vào datagridview
 
+            }
+        }
+        public void InsertKTDAL(KiThi kithi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO KiThi(MaKiThi,TenKiThi,ThoiGianBatDau,ThoiGianKetThuc,MoTa) " +
+                           "VALUES (@MaKiThi,@TenKiThi,@ThoiGianBatDau,@ThoiGianKetThuc,@MoTa)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKiThi", kithi.MaKiThi);
+                command.Parameters.AddWithValue("@TenKiThi", kithi.TenKiThi);
+                command.Parameters.AddWithValue("@ThoiGianBatDau", kithi.ThoiGianBatDau);
+                command.Parameters.AddWithValue("@ThoiGianKetThuc", kithi.ThoiGianKetThuc);
+                command.Parameters.AddWithValue("@MoTa", kithi.MoTa);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateKTDAL(KiThi kithi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE KiThi SET TenKiThi= @TenKiThi,ThoiGianBatDau= @ThoiGianBatDau,ThoiGianKetThuc=@ThoiGianKetThuc,MoTa=@MoTa " +
+                           "WHERE MaKiThi= @MaKiThi";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKiThi", kithi.MaKiThi);
+                command.Parameters.AddWithValue("@TenKiThi", kithi.TenKiThi);
+                command.Parameters.AddWithValue("@ThoiGianBatDau", kithi.ThoiGianBatDau);
+                command.Parameters.AddWithValue("@ThoiGianKetThuc", kithi.ThoiGianKetThuc);
+                command.Parameters.AddWithValue("@MoTa", kithi.MoTa);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteKTDAL(KiThi kithi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete KiThi WHERE MaKiThi = @MaKiThi";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKiThi", kithi.MaKiThi);
+                command.ExecuteNonQuery();
+
+            }
+        }
+
+        //tìm mã id lớn nhất 
+        public string maxIDKTDAL(KiThi kithi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaKiThi) from KiThi";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKiThi", kithi.MaKiThi);
+                command.ExecuteNonQuery();
+                return (kithi.MaKiThi);
+
+            }
+        }
+        public void InsertCNDAL(ChungNhan chungnhan)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO ChungNhan(MaChungNhan,TenChungNhan,NgayCap,XepLoai) " +
+                           "VALUES (@MaChungNhan,@TenChungNhan,@NgayCap,@XepLoai)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaChungNhan", chungnhan.MaChungNhan);
+                command.Parameters.AddWithValue("@TenChungNhan", chungnhan.TenChungNhan);
+                command.Parameters.AddWithValue("@NgayCap", chungnhan.NgayCap);
+                command.Parameters.AddWithValue("@XepLoai", chungnhan.XepLoai);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateCNDAL(ChungNhan chungnhan)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE ChungNhan SET TenChungNhan= @TenChungNhan,NgayCap= @NgayCap,XepLoai=@XepLoai " +
+                           "WHERE MaChungNhan= @MaChungNhan";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaChungNhan", chungnhan.MaChungNhan);
+                command.Parameters.AddWithValue("@TenChungNhan", chungnhan.TenChungNhan);
+                command.Parameters.AddWithValue("@NgayCap", chungnhan.NgayCap);
+                command.Parameters.AddWithValue("@XepLoai", chungnhan.XepLoai);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteCNDAL(ChungNhan chungnhan)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete ChungNhan WHERE MaChungNhan = @MaChungNhan";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaChungNhan", chungnhan.MaChungNhan);
+                command.ExecuteNonQuery();
+
+            }
+        }
+
+        //tìm mã id lớn nhất 
+        public string maxIDCNDAL(ChungNhan chungnhan)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaChungNhan) from ChungNhan";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaChungNhan", chungnhan.MaChungNhan);
+                command.ExecuteNonQuery();
+                return (chungnhan.MaChungNhan);
+
+            }
+        }
+        public void InsertHVDAL(HocVien hocvien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO HocVien(MaHocVien,HoTen,DiaChi,NgaySinh,SDTGiaDinh,SDTCaNhan,MaChungNhan) " +
+                           "VALUES (@MaHocVien,@HoTen,@DiaChi,@NgaySinh,@SDTGiaDinh,@SDTCaNhan,@MaChungNhan)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", hocvien.MaHocVien);
+                command.Parameters.AddWithValue("@HoTen", hocvien.HoTen);
+                command.Parameters.AddWithValue("@DiaChi", hocvien.DiaChi);
+                command.Parameters.AddWithValue("@NgaySinh", hocvien.NgaySinh);
+                command.Parameters.AddWithValue("@SDTGiaDinh", hocvien.SDTGiaDinh);
+                command.Parameters.AddWithValue("@SDTCaNhan", hocvien.SDTCaNhan);
+                command.Parameters.AddWithValue("@MaChungNhan", hocvien.MaChungNhan);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateHVDAL(HocVien hocvien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE HocVien SET HoTen= @HoTen,DiaChi= @DiaChi,NgaySinh=@NgaySinh,SDTGiaDinh=@SDTGiaDinh,SDTCaNhan=@SDTCaNhan,MaChungNhan=@MaChungNhan " +
+                           "WHERE MaHocVien= @MaHocVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", hocvien.MaHocVien);
+                command.Parameters.AddWithValue("@HoTen", hocvien.HoTen);
+                command.Parameters.AddWithValue("@DiaChi", hocvien.DiaChi);
+                command.Parameters.AddWithValue("@NgaySinh", hocvien.NgaySinh);
+                command.Parameters.AddWithValue("@SDTGiaDinh", hocvien.SDTGiaDinh);
+                command.Parameters.AddWithValue("@SDTCaNhan", hocvien.SDTCaNhan);
+                command.Parameters.AddWithValue("@MaChungNhan", hocvien.MaChungNhan);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteHVDAL(HocVien hocvien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete HocVien WHERE MaHocVien = @MaHocVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", hocvien.MaHocVien);
+                command.ExecuteNonQuery();
+
+            }
+        }
+
+        //tìm mã id lớn nhất 
+        public string maxIDHVDAL(HocVien hocvien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaHocVien) from hocvien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", hocvien.MaHocVien);
+                command.ExecuteNonQuery();
+                return (hocvien.MaHocVien);
+
+            }
+        }
+        public void InsertDTDAL(DiemThi diemthi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO DiemThi(MaHocVien,MaKiThi,NgayThi,KetQuaThi,DiemDanh) " +
+                           "VALUES (@MaHocVien,@MaKiThi,@NgayThi,@KetQuaThi,@DiemDanh)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", diemthi.MaHocVien);
+                command.Parameters.AddWithValue("@MaKiThi", diemthi.MaKiThi);
+                command.Parameters.AddWithValue("@NgayThi", diemthi.NgayThi);
+                command.Parameters.AddWithValue("@KetQuaThi", diemthi.KetQuaThi);
+                command.Parameters.AddWithValue("@DiemDanh", diemthi.DiemDanh);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateDTDAL(DiemThi diemthi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE DiemThi SET NgayThi= @NgayThi,KetQuaThi= @KetQuaThi,DiemDanh=@DiemDanh " +
+                           "WHERE MaHocVien= @MaHocVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", diemthi.MaHocVien);
+                command.Parameters.AddWithValue("@MaKiThi", diemthi.MaKiThi);
+                command.Parameters.AddWithValue("@NgayThi", diemthi.NgayThi);
+                command.Parameters.AddWithValue("@KetQuaThi", diemthi.KetQuaThi);
+                command.Parameters.AddWithValue("@DiemDanh", diemthi.DiemDanh);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteDTDAL(DiemThi diemthi)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete DiemThi WHERE MaHocVien = @MaHocVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHocVien", diemthi.MaHocVien);
+                command.ExecuteNonQuery();
+
+            }
+        }
+        public void InsertHDDAL(HopDong hopdong)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO HopDong(MaHopDong,TenHopDong,NoiDung,NgayLap,ThoiHan) " +
+                           "VALUES (@MaHopDong,@TenHopDong,@NoiDung,@NgayLap,@ThoiHan)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHopDong", hopdong.MaHopDong);
+                command.Parameters.AddWithValue("@TenHopDong", hopdong.TenHopDong);
+                command.Parameters.AddWithValue("@NoiDung", hopdong.NoiDung);
+                command.Parameters.AddWithValue("@NgayLap", hopdong.NgayLap);
+                command.Parameters.AddWithValue("@ThoiHan", hopdong.ThoiHan);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void InsertLHDAL(LopHoc lophoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO LopHoc(MaLop,TenLop,TenPhongHoc,NgayBatDau) " +
+                           "VALUES (@MaLop,@TenLop,@TenPhongHoc,@NgayBatDau)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaLop", lophoc.MaLop);
+                command.Parameters.AddWithValue("@TenLop", lophoc.TenLop);
+                command.Parameters.AddWithValue("@TenPhongHoc", lophoc.TenPhongHoc);
+                command.Parameters.AddWithValue("@NgayBatDau", lophoc.NgayBatDau);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void InsertKHDAL(KhoaHoc khoahoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO KhoaHoc(MaKH,TenKhoaHoc,CapDo,SoBuoi,HocPhi,MaLop) " +
+                           "VALUES (@MaKH,@TenKhoaHoc,@CapDo,@SoBuoi,@HocPhi,@MaLop)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKH", khoahoc.MaKH);
+                command.Parameters.AddWithValue("@TenKhoaHoc", khoahoc.TenKhoaHoc);
+                command.Parameters.AddWithValue("@CapDo", khoahoc.CapDo);
+                command.Parameters.AddWithValue("@SoBuoi", khoahoc.SoBuoi);
+                command.Parameters.AddWithValue("@HocPhi", khoahoc.HocPhi);
+                command.Parameters.AddWithValue("@MaLop", khoahoc.MaLop);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void InsertGVDAL(GiaoVien giaovien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "INSERT INTO GiaoVien(MaGiaoVien,HoTen,DiaChi,Sdt,NgaySinh,NgayVaoLam,ChuyenMon,BangCap,MaHopDong,MaLop) " +
+                           "VALUES (@MaGiaoVien,@HoTen,@DiaChi,@Sdt,@NgaySinh,@NgayVaoLam,@ChuyenMon,@BangCap,@MaHopDong,@MaLop)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaGiaoVien", giaovien.MaGiaoVien);
+                command.Parameters.AddWithValue("@HoTen", giaovien.HoTen);
+                command.Parameters.AddWithValue("@DiaChi", giaovien.DiaChi);
+                command.Parameters.AddWithValue("@Sdt", giaovien.Sdt);
+                command.Parameters.AddWithValue("@NgaySinh", giaovien.NgaySinh);
+                command.Parameters.AddWithValue("@NgayVaoLam", giaovien.NgayVaoLam);
+                command.Parameters.AddWithValue("@ChuyenMon", giaovien.ChuyenMon);
+                command.Parameters.AddWithValue("@BangCap", giaovien.BangCap);
+                command.Parameters.AddWithValue("@MaHopDong", giaovien.MaHopDong);
+                command.Parameters.AddWithValue("@MaLop", giaovien.MaLop);
+                command.ExecuteNonQuery();
             }
         }
     }

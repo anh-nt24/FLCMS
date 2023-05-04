@@ -26,10 +26,10 @@ namespace GUI
             txtmand.Enabled= false;
             txttaikhoan.Enabled=false;
             txtmk.Enabled=false;
-            txtemail.Enabled = false;
             //load combobox hoten ở find
             cbten.DisplayMember = "HoTen";
-            cbten.DataSource = ndbus.LoadComboBox();
+            string sql = "select HoTen from NguoiDung";
+            cbten.DataSource = ndbus.LoadComboBox(sql);
             btnsua.Enabled = false;
             btnxoa.Enabled = false;
         }
@@ -102,6 +102,9 @@ namespace GUI
                         txtngaysinh.Text = "";
                         cbchucvu.Text = "";
                         txtemail.Text = "";
+                        cbten.DisplayMember = "HoTen";
+                        string sql = "select HoTen from NguoiDung";
+                        cbten.DataSource = ndbus.LoadComboBox(sql);
                     }
 
                 }
@@ -172,7 +175,10 @@ namespace GUI
             cbquyen.Text = "";
             txtngaysinh.Text = "";
             cbchucvu.Text = "";
-            txtemail.Text = "";         
+            txtemail.Text = "";
+            cbten.DisplayMember = "HoTen";
+            string sql = "select HoTen from NguoiDung";
+            cbten.DataSource = ndbus.LoadComboBox(sql);
 
         }
 
@@ -202,6 +208,9 @@ namespace GUI
             txtngaysinh.Text = "";
             cbchucvu.Text = "";
             txtemail.Text = "";
+            cbten.DisplayMember = "HoTen";
+            string sql = "select HoTen from NguoiDung";
+            cbten.DataSource = ndbus.LoadComboBox(sql);
         }
 
         private void btntimkiem_Click(object sender, EventArgs e)
@@ -209,6 +218,11 @@ namespace GUI
             //tìm kiếm thì load lại dgv
             string sql = "select * from NguoiDung where HoTen= N'"+cbten.Text+"'";
             dgvnd.DataSource = ndbus.DatagvFind(sql);
+        }
+
+        private void QLND_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

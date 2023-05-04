@@ -67,9 +67,9 @@ namespace BUS
         {
             return dgv.DatagvFind(sql);
         }
-        public DataTable LoadComboBox()
+        public DataTable LoadComboBox(string sql)
         {
-            return dgv.LoadComboBox();
+            return dgv.LoadComboBox(sql);
         }
     }
 }

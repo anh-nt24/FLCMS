@@ -67,7 +67,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvnd);
-            this.groupBox2.Location = new System.Drawing.Point(3, 11);
+            this.groupBox2.Location = new System.Drawing.Point(3, 2);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -117,7 +117,7 @@
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.btnsua);
             this.panel1.Controls.Add(this.btnthem);
-            this.panel1.Location = new System.Drawing.Point(609, 33);
+            this.panel1.Location = new System.Drawing.Point(609, 23);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(544, 462);
@@ -182,12 +182,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(29, 31);
+            this.label5.Location = new System.Drawing.Point(26, 31);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 16);
+            this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 59;
-            this.label5.Text = "MaND";
+            this.label5.Text = "Mã ND";
             // 
             // label4
             // 
@@ -431,7 +431,7 @@
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QLND";
-            this.Size = new System.Drawing.Size(1229, 495);
+            this.Size = new System.Drawing.Size(1163, 495);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvnd)).EndInit();
             this.panel1.ResumeLayout(false);
