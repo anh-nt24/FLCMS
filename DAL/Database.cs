@@ -434,14 +434,13 @@ namespace DAL
         public string maxIDHVDAL(HocVien hocvien)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
-            string query = "Select Max(MaHocVien) from hocvien";
+            string query = "Select Max(MaHocVien) from HocVien";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@MaHocVien", hocvien.MaHocVien);
                 command.ExecuteNonQuery();
                 return (hocvien.MaHocVien);
-
             }
         }
         public void InsertDTDAL(DiemThi diemthi)
@@ -504,6 +503,46 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+        public void UpdateHDDAL(HopDong hopdong)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE HopDong SET TenHopDong= @TenHopDong,NoiDung= @NoiDung,NgayLap=@NgayLap,ThoiHan=@ThoiHan " +
+                           "WHERE MaHopDong= @MaHopDong";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHopDong", hopdong.MaHopDong);
+                command.Parameters.AddWithValue("@TenHopDong", hopdong.TenHopDong);
+                command.Parameters.AddWithValue("@NoiDung", hopdong.NoiDung);
+                command.Parameters.AddWithValue("@NgayLap", hopdong.NgayLap);
+                command.Parameters.AddWithValue("@ThoiHan", hopdong.ThoiHan);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteHDDAL(HopDong hopdong)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete HopDong WHERE MaHopDong = @MaHopDong";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHopDong", hopdong.MaHopDong);
+                command.ExecuteNonQuery();
+
+            }
+        }
+        public string maxIDHDDAL(HopDong hopdong)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaHopDong) from HopDong";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaHopDong", hopdong.MaHopDong);
+                command.ExecuteNonQuery();
+                return (hopdong.MaHopDong);
+            }
+        }
         public void InsertLHDAL(LopHoc lophoc)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
@@ -517,6 +556,45 @@ namespace DAL
                 command.Parameters.AddWithValue("@TenPhongHoc", lophoc.TenPhongHoc);
                 command.Parameters.AddWithValue("@NgayBatDau", lophoc.NgayBatDau);
                 command.ExecuteNonQuery();
+            }
+        }
+        public void deleteLHDAL(LopHoc lophoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete LopHoc WHERE MaLop = @MaLop";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaLop", lophoc.MaLop);
+                command.ExecuteNonQuery();
+
+            }
+        }
+        public void UpdateLHDAL(LopHoc lophoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE LopHoc SET TenLop= @TenLop,TenPhongHoc= @TenPhongHoc,NgayBatDau=@NgayBatDau " +
+                           "WHERE MaLop= @MaLop";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaLop", lophoc.MaLop);
+                command.Parameters.AddWithValue("@TenLop", lophoc.TenLop);
+                command.Parameters.AddWithValue("@TenPhongHoc", lophoc.TenPhongHoc);
+                command.Parameters.AddWithValue("@NgayBatDau", lophoc.NgayBatDau);
+                command.ExecuteNonQuery();
+            }
+        }
+        public string maxIDLHDAL(LopHoc lophoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaLop) from LopHoc";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaLop", lophoc.MaLop);
+                command.ExecuteNonQuery();
+                return (lophoc.MaLop);
             }
         }
         public void InsertKHDAL(KhoaHoc khoahoc)
@@ -534,6 +612,47 @@ namespace DAL
                 command.Parameters.AddWithValue("@HocPhi", khoahoc.HocPhi);
                 command.Parameters.AddWithValue("@MaLop", khoahoc.MaLop);
                 command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateKHDAL(KhoaHoc khoahoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE KhoaHoc SET TenKhoaHoc= @TenKhoaHoc,CapDo= @CapDo,SoBuoi=@SoBuoi,HocPhi=@HocPhi,MaLop=@MaLop " +
+                           "WHERE MaKH= @MaKH";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKH", khoahoc.MaKH);
+                command.Parameters.AddWithValue("@TenKhoaHoc", khoahoc.TenKhoaHoc);
+                command.Parameters.AddWithValue("@CapDo", khoahoc.CapDo);
+                command.Parameters.AddWithValue("@SoBuoi", khoahoc.SoBuoi);
+                command.Parameters.AddWithValue("@HocPhi", khoahoc.HocPhi);
+                command.Parameters.AddWithValue("@MaLop", khoahoc.MaLop);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteKHDAL(KhoaHoc khoahoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete KhoaHoc WHERE MaKH = @MaKH";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKH", khoahoc.MaKH);
+                command.ExecuteNonQuery();
+
+            }
+        }
+        public string maxIDKHDAL(KhoaHoc khoahoc)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaKH) from KhoaHoc";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKH", khoahoc.MaKH);
+                command.ExecuteNonQuery();
+                return (khoahoc.MaKH);
             }
         }
         public void InsertGVDAL(GiaoVien giaovien)
@@ -555,6 +674,51 @@ namespace DAL
                 command.Parameters.AddWithValue("@MaHopDong", giaovien.MaHopDong);
                 command.Parameters.AddWithValue("@MaLop", giaovien.MaLop);
                 command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateGVDAL(GiaoVien giaovien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE GiaoVien SET HoTen= @HoTen,DiaChi= @DiaChi,Sdt=@Sdt,NgaySinh=@NgaySinh,NgayVaoLam=@NgayVaoLam,ChuyenMon=@ChuyenMon,BangCap=@BangCap,MaHopDong=@MaHopDong,MaLop=@MaLop " +
+                           "WHERE MaGiaoVien= @MaGiaoVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaGiaoVien", giaovien.MaGiaoVien);
+                command.Parameters.AddWithValue("@HoTen", giaovien.HoTen);
+                command.Parameters.AddWithValue("@DiaChi", giaovien.DiaChi);
+                command.Parameters.AddWithValue("@Sdt", giaovien.Sdt);
+                command.Parameters.AddWithValue("@NgaySinh", giaovien.NgaySinh);
+                command.Parameters.AddWithValue("@NgayVaoLam", giaovien.NgayVaoLam);
+                command.Parameters.AddWithValue("@ChuyenMon", giaovien.ChuyenMon);
+                command.Parameters.AddWithValue("@BangCap", giaovien.BangCap);
+                command.Parameters.AddWithValue("@MaHopDong", giaovien.MaHopDong);
+                command.Parameters.AddWithValue("@MaLop", giaovien.MaLop);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void deleteGVDAL(GiaoVien giaovien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Delete GiaoVien WHERE MaGiaoVien = @MaGiaoVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaGiaoVien", giaovien.MaGiaoVien);
+                command.ExecuteNonQuery();
+
+            }
+        }
+        public string maxIDGVDAL(GiaoVien giaovien)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "Select Max(MaGiaoVien) from GiaoVien";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaGiaoVien", giaovien.MaGiaoVien);
+                command.ExecuteNonQuery();
+                return (giaovien.MaGiaoVien);
             }
         }
     }

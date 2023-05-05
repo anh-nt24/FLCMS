@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbphong = new System.Windows.Forms.ComboBox();
             this.txtthoihan = new System.Windows.Forms.Label();
-            this.txthethan = new System.Windows.Forms.DateTimePicker();
+            this.txtngaybd = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btnthem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvlh = new System.Windows.Forms.DataGridView();
-            this.cbphong = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.cbphong);
             this.panel1.Controls.Add(this.txtthoihan);
-            this.panel1.Controls.Add(this.txthethan);
+            this.panel1.Controls.Add(this.txtngaybd);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -74,6 +74,27 @@
             this.panel1.Size = new System.Drawing.Size(545, 460);
             this.panel1.TabIndex = 18;
             // 
+            // cbphong
+            // 
+            this.cbphong.FormattingEnabled = true;
+            this.cbphong.Items.AddRange(new object[] {
+            "Dãy 1, Phòng A01",
+            "Dãy 1, Phòng A02",
+            "Dãy 1, Phòng A03",
+            "Dãy 1, Phòng A04",
+            "Dãy 1, Phòng A05",
+            "Dãy 1, Phòng A06",
+            "Dãy 2, Phòng B01",
+            "Dãy 2, Phòng B02",
+            "Dãy 2, Phòng B03",
+            "Dãy 2, Phòng B04",
+            "Dãy 2, Phòng B05",
+            "Dãy 2, Phòng B06"});
+            this.cbphong.Location = new System.Drawing.Point(171, 179);
+            this.cbphong.Name = "cbphong";
+            this.cbphong.Size = new System.Drawing.Size(250, 24);
+            this.cbphong.TabIndex = 69;
+            // 
             // txtthoihan
             // 
             this.txtthoihan.AutoSize = true;
@@ -85,13 +106,13 @@
             this.txtthoihan.TabIndex = 68;
             this.txtthoihan.Text = "Ngày bắt đầu";
             // 
-            // txthethan
+            // txtngaybd
             // 
-            this.txthethan.Location = new System.Drawing.Point(172, 221);
-            this.txthethan.Margin = new System.Windows.Forms.Padding(4);
-            this.txthethan.Name = "txthethan";
-            this.txthethan.Size = new System.Drawing.Size(249, 22);
-            this.txthethan.TabIndex = 67;
+            this.txtngaybd.Location = new System.Drawing.Point(172, 221);
+            this.txtngaybd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtngaybd.Name = "txtngaybd";
+            this.txtngaybd.Size = new System.Drawing.Size(249, 22);
+            this.txtngaybd.TabIndex = 67;
             // 
             // label7
             // 
@@ -158,6 +179,7 @@
             this.btnhuy.TabIndex = 35;
             this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = false;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnxoa
             // 
@@ -169,6 +191,7 @@
             this.btnxoa.TabIndex = 37;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // groupBox3
             // 
@@ -203,6 +226,7 @@
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btntimkiem.UseVisualStyleBackColor = false;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnsua
             // 
@@ -214,6 +238,7 @@
             this.btnsua.TabIndex = 38;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnthem
             // 
@@ -225,11 +250,12 @@
             this.btnthem.TabIndex = 39;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvlh);
-            this.groupBox2.Location = new System.Drawing.Point(3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(3, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -247,29 +273,9 @@
             this.dgvlh.Name = "dgvlh";
             this.dgvlh.RowHeadersWidth = 51;
             this.dgvlh.RowTemplate.Height = 24;
-            this.dgvlh.Size = new System.Drawing.Size(594, 473);
+            this.dgvlh.Size = new System.Drawing.Size(594, 460);
             this.dgvlh.TabIndex = 5;
-            // 
-            // cbphong
-            // 
-            this.cbphong.FormattingEnabled = true;
-            this.cbphong.Items.AddRange(new object[] {
-            "Dãy 1, Phòng A01",
-            "Dãy 1, Phòng A02",
-            "Dãy 1, Phòng A03",
-            "Dãy 1, Phòng A04",
-            "Dãy 1, Phòng A05",
-            "Dãy 1, Phòng A06",
-            "Dãy 2, Phòng B01",
-            "Dãy 2, Phòng B02",
-            "Dãy 2, Phòng B03",
-            "Dãy 2, Phòng B04",
-            "Dãy 2, Phòng B05",
-            "Dãy 2, Phòng B06"});
-            this.cbphong.Location = new System.Drawing.Point(171, 179);
-            this.cbphong.Name = "cbphong";
-            this.cbphong.Size = new System.Drawing.Size(250, 24);
-            this.cbphong.TabIndex = 69;
+            this.dgvlh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlh_CellContentClick);
             // 
             // QLLH
             // 
@@ -278,7 +284,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Name = "QLLH";
-            this.Size = new System.Drawing.Size(1161, 490);
+            this.Size = new System.Drawing.Size(1174, 508);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -292,7 +298,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label txtthoihan;
-        private System.Windows.Forms.DateTimePicker txthethan;
+        private System.Windows.Forms.DateTimePicker txtngaybd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

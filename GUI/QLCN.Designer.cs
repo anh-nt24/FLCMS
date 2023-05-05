@@ -267,7 +267,7 @@
             this.dgvcn.Name = "dgvcn";
             this.dgvcn.RowHeadersWidth = 51;
             this.dgvcn.RowTemplate.Height = 24;
-            this.dgvcn.Size = new System.Drawing.Size(594, 473);
+            this.dgvcn.Size = new System.Drawing.Size(594, 460);
             this.dgvcn.TabIndex = 5;
             this.dgvcn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcn_CellContentClick);
             // 

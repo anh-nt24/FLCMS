@@ -68,8 +68,12 @@
     <Compile Include="ChungNhanDAL.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DiemThiDAL.cs" />
+    <Compile Include="GiaoVienDAL.cs" />
     <Compile Include="HocVienDAL.cs" />
+    <Compile Include="HopDongDAL.cs" />
+    <Compile Include="KhoaHocDAL.cs" />
     <Compile Include="KiThiDAL.cs" />
+    <Compile Include="LopHocDAL.cs" />
     <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />

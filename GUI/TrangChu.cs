@@ -32,7 +32,7 @@ namespace GUI
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            //anhTrangChu1.BringToFront();
+            anhTrangChu1.BringToFront();
         }
 
         private void btnkithi_Click(object sender, EventArgs e)

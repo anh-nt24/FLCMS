@@ -85,7 +85,7 @@
             this.dgvnd.Name = "dgvnd";
             this.dgvnd.RowHeadersWidth = 51;
             this.dgvnd.RowTemplate.Height = 24;
-            this.dgvnd.Size = new System.Drawing.Size(591, 462);
+            this.dgvnd.Size = new System.Drawing.Size(591, 460);
             this.dgvnd.TabIndex = 5;
             this.dgvnd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnd_CellContentClick);
             // 

@@ -26,8 +26,8 @@ namespace GUI
             cbmakt.DisplayMember = "MaKiThi";
             string sql4 = "select MaKiThi from KiThi";
             cbmakt.DataSource = dtbus.LoadComboBox(sql4);
-            cbten.DisplayMember = "MaHocVien";
-            string sql1 = "select MaHocVien from DiemThi";
+            cbten.DisplayMember = "MaKithi";
+            string sql1 = "select MaKiThi from DiemThi";
             cbten.DataSource = dtbus.LoadComboBox(sql1);
         }
         DiemThiBUS dtbus = new DiemThiBUS();

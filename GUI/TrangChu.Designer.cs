@@ -32,10 +32,27 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btncn = new System.Windows.Forms.Button();
             this.btnkithi = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnnguoidung = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemThôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiMậtKhẩuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnbaocao = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.paneltrangchu = new System.Windows.Forms.Panel();
+            this.anhTrangChu1 = new GUI.anhTrangChu();
+            this.qlgv1 = new GUI.QLGV();
+            this.qlkh1 = new GUI.QLKH();
+            this.qllh1 = new GUI.QLLH();
+            this.qlhd1 = new GUI.QLHD();
+            this.qlnd1 = new GUI.QLND();
+            this.qlkt2 = new GUI.QLKT();
+            this.qlhv2 = new GUI.QLHV();
+            this.qldt1 = new GUI.QLDT();
+            this.qlcn2 = new GUI.QLCN();
             this.btnhocvien = new System.Windows.Forms.Button();
             this.btnkhoahoc = new System.Windows.Forms.Button();
             this.btndiemthi = new System.Windows.Forms.Button();
@@ -45,34 +62,17 @@
             this.xemThôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.xemThôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đổiMậtKhẩuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.qlhd1 = new GUI.QLHD();
-            this.qlnd1 = new GUI.QLND();
-            this.qlkt2 = new GUI.QLKT();
-            this.qlhv2 = new GUI.QLHV();
-            this.qldt1 = new GUI.QLDT();
-            this.qlcn2 = new GUI.QLCN();
             this.qlhv1 = new GUI.QLHV();
             this.qlcn1 = new GUI.QLCN();
             this.qlkt1 = new GUI.QLKT();
             this.qlnd2 = new GUI.QLND();
-            this.qllh1 = new GUI.QLLH();
-            this.qlkh1 = new GUI.QLKH();
-            this.qlgv1 = new GUI.QLGV();
-            this.anhTrangChu1 = new GUI.anhTrangChu();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.paneltrangchu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.paneltrangchu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -133,6 +133,17 @@
             this.btnkithi.UseVisualStyleBackColor = false;
             this.btnkithi.Click += new System.EventHandler(this.btnkithi_Click);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::GUI.Properties.Resources.logout__1_;
+            this.pictureBox6.Location = new System.Drawing.Point(73, 512);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(81, 59);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 20;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // btnnguoidung
             // 
             this.btnnguoidung.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -141,7 +152,7 @@
             this.btnnguoidung.Name = "btnnguoidung";
             this.btnnguoidung.Size = new System.Drawing.Size(261, 48);
             this.btnnguoidung.TabIndex = 7;
-            this.btnnguoidung.Text = "       Quản lý người dùng";
+            this.btnnguoidung.Text = " Quản lý người dùng";
             this.btnnguoidung.UseVisualStyleBackColor = false;
             this.btnnguoidung.Click += new System.EventHandler(this.btnnguoidung_Click_1);
             // 
@@ -157,6 +168,48 @@
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackgroundImage = global::GUI.Properties.Resources.user;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(1254, 18);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(75, 28);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xemThôngTinCáNhânToolStripMenuItem,
+            this.đổiMậtKhẩuToolStripMenuItem1,
+            this.đăngXuấtToolStripMenuItem1});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
+            this.toolStripMenuItem1.Text = "Admin";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // xemThôngTinCáNhânToolStripMenuItem
+            // 
+            this.xemThôngTinCáNhânToolStripMenuItem.Name = "xemThôngTinCáNhânToolStripMenuItem";
+            this.xemThôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.xemThôngTinCáNhânToolStripMenuItem.Text = "Xem thông tin cá nhân";
+            // 
+            // đổiMậtKhẩuToolStripMenuItem1
+            // 
+            this.đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
+            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
+            this.đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
+            // 
+            // đăngXuấtToolStripMenuItem1
+            // 
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            // 
             // btnbaocao
             // 
             this.btnbaocao.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -167,6 +220,17 @@
             this.btnbaocao.TabIndex = 6;
             this.btnbaocao.Text = "   Quản lý báo cáo";
             this.btnbaocao.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox7.Image = global::GUI.Properties.Resources.monitor;
+            this.pictureBox7.Location = new System.Drawing.Point(288, 12);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(50, 57);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 17;
+            this.pictureBox7.TabStop = false;
             // 
             // paneltrangchu
             // 
@@ -184,6 +248,77 @@
             this.paneltrangchu.Name = "paneltrangchu";
             this.paneltrangchu.Size = new System.Drawing.Size(1163, 503);
             this.paneltrangchu.TabIndex = 1;
+            // 
+            // anhTrangChu1
+            // 
+            this.anhTrangChu1.Location = new System.Drawing.Point(12, 0);
+            this.anhTrangChu1.Name = "anhTrangChu1";
+            this.anhTrangChu1.Size = new System.Drawing.Size(1151, 509);
+            this.anhTrangChu1.TabIndex = 9;
+            // 
+            // qlgv1
+            // 
+            this.qlgv1.Location = new System.Drawing.Point(3, -2);
+            this.qlgv1.Name = "qlgv1";
+            this.qlgv1.Size = new System.Drawing.Size(1161, 492);
+            this.qlgv1.TabIndex = 8;
+            // 
+            // qlkh1
+            // 
+            this.qlkh1.Location = new System.Drawing.Point(3, -2);
+            this.qlkh1.Name = "qlkh1";
+            this.qlkh1.Size = new System.Drawing.Size(1162, 488);
+            this.qlkh1.TabIndex = 7;
+            // 
+            // qllh1
+            // 
+            this.qllh1.Location = new System.Drawing.Point(3, -1);
+            this.qllh1.Name = "qllh1";
+            this.qllh1.Size = new System.Drawing.Size(1161, 490);
+            this.qllh1.TabIndex = 6;
+            // 
+            // qlhd1
+            // 
+            this.qlhd1.Location = new System.Drawing.Point(3, 0);
+            this.qlhd1.Name = "qlhd1";
+            this.qlhd1.Size = new System.Drawing.Size(1160, 508);
+            this.qlhd1.TabIndex = 5;
+            // 
+            // qlnd1
+            // 
+            this.qlnd1.Location = new System.Drawing.Point(0, -2);
+            this.qlnd1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.qlnd1.Name = "qlnd1";
+            this.qlnd1.Size = new System.Drawing.Size(1163, 509);
+            this.qlnd1.TabIndex = 4;
+            // 
+            // qlkt2
+            // 
+            this.qlkt2.Location = new System.Drawing.Point(3, 0);
+            this.qlkt2.Name = "qlkt2";
+            this.qlkt2.Size = new System.Drawing.Size(1166, 513);
+            this.qlkt2.TabIndex = 3;
+            // 
+            // qlhv2
+            // 
+            this.qlhv2.Location = new System.Drawing.Point(3, -1);
+            this.qlhv2.Name = "qlhv2";
+            this.qlhv2.Size = new System.Drawing.Size(1177, 501);
+            this.qlhv2.TabIndex = 2;
+            // 
+            // qldt1
+            // 
+            this.qldt1.Location = new System.Drawing.Point(3, 3);
+            this.qldt1.Name = "qldt1";
+            this.qldt1.Size = new System.Drawing.Size(1160, 502);
+            this.qldt1.TabIndex = 1;
+            // 
+            // qlcn2
+            // 
+            this.qlcn2.Location = new System.Drawing.Point(3, 3);
+            this.qlcn2.Name = "qlcn2";
+            this.qlcn2.Size = new System.Drawing.Size(1160, 505);
+            this.qlcn2.TabIndex = 0;
             // 
             // btnhocvien
             // 
@@ -279,113 +414,6 @@
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::GUI.Properties.Resources.logout__1_;
-            this.pictureBox6.Location = new System.Drawing.Point(73, 512);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(81, 59);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 20;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackgroundImage = global::GUI.Properties.Resources.user;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(1254, 18);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(77, 30);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xemThôngTinCáNhânToolStripMenuItem,
-            this.đổiMậtKhẩuToolStripMenuItem1,
-            this.đăngXuấtToolStripMenuItem1});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 26);
-            this.toolStripMenuItem1.Text = "Admin";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // xemThôngTinCáNhânToolStripMenuItem
-            // 
-            this.xemThôngTinCáNhânToolStripMenuItem.Name = "xemThôngTinCáNhânToolStripMenuItem";
-            this.xemThôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
-            this.xemThôngTinCáNhânToolStripMenuItem.Text = "Xem thông tin cá nhân";
-            // 
-            // đổiMậtKhẩuToolStripMenuItem1
-            // 
-            this.đổiMậtKhẩuToolStripMenuItem1.Name = "đổiMậtKhẩuToolStripMenuItem1";
-            this.đổiMậtKhẩuToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
-            this.đổiMậtKhẩuToolStripMenuItem1.Text = "Đổi mật khẩu";
-            // 
-            // đăngXuấtToolStripMenuItem1
-            // 
-            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
-            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.pictureBox7.Image = global::GUI.Properties.Resources.monitor;
-            this.pictureBox7.Location = new System.Drawing.Point(288, 12);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 57);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 17;
-            this.pictureBox7.TabStop = false;
-            // 
-            // qlhd1
-            // 
-            this.qlhd1.Location = new System.Drawing.Point(3, 0);
-            this.qlhd1.Name = "qlhd1";
-            this.qlhd1.Size = new System.Drawing.Size(1160, 508);
-            this.qlhd1.TabIndex = 5;
-            // 
-            // qlnd1
-            // 
-            this.qlnd1.Location = new System.Drawing.Point(0, -2);
-            this.qlnd1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.qlnd1.Name = "qlnd1";
-            this.qlnd1.Size = new System.Drawing.Size(1163, 509);
-            this.qlnd1.TabIndex = 4;
-            // 
-            // qlkt2
-            // 
-            this.qlkt2.Location = new System.Drawing.Point(3, 0);
-            this.qlkt2.Name = "qlkt2";
-            this.qlkt2.Size = new System.Drawing.Size(1166, 513);
-            this.qlkt2.TabIndex = 3;
-            // 
-            // qlhv2
-            // 
-            this.qlhv2.Location = new System.Drawing.Point(3, -1);
-            this.qlhv2.Name = "qlhv2";
-            this.qlhv2.Size = new System.Drawing.Size(1177, 501);
-            this.qlhv2.TabIndex = 2;
-            // 
-            // qldt1
-            // 
-            this.qldt1.Location = new System.Drawing.Point(3, 3);
-            this.qldt1.Name = "qldt1";
-            this.qldt1.Size = new System.Drawing.Size(1160, 502);
-            this.qldt1.TabIndex = 1;
-            // 
-            // qlcn2
-            // 
-            this.qlcn2.Location = new System.Drawing.Point(3, 3);
-            this.qlcn2.Name = "qlcn2";
-            this.qlcn2.Size = new System.Drawing.Size(1160, 505);
-            this.qlcn2.TabIndex = 0;
-            // 
             // qlhv1
             // 
             this.qlhv1.Location = new System.Drawing.Point(0, -2);
@@ -416,34 +444,6 @@
             this.qlnd2.Size = new System.Drawing.Size(1166, 497);
             this.qlnd2.TabIndex = 4;
             // 
-            // qllh1
-            // 
-            this.qllh1.Location = new System.Drawing.Point(3, -1);
-            this.qllh1.Name = "qllh1";
-            this.qllh1.Size = new System.Drawing.Size(1161, 490);
-            this.qllh1.TabIndex = 6;
-            // 
-            // qlkh1
-            // 
-            this.qlkh1.Location = new System.Drawing.Point(3, -2);
-            this.qlkh1.Name = "qlkh1";
-            this.qlkh1.Size = new System.Drawing.Size(1162, 488);
-            this.qlkh1.TabIndex = 7;
-            // 
-            // qlgv1
-            // 
-            this.qlgv1.Location = new System.Drawing.Point(3, -2);
-            this.qlgv1.Name = "qlgv1";
-            this.qlgv1.Size = new System.Drawing.Size(1161, 492);
-            this.qlgv1.TabIndex = 8;
-            // 
-            // anhTrangChu1
-            // 
-            this.anhTrangChu1.Location = new System.Drawing.Point(12, 0);
-            this.anhTrangChu1.Name = "anhTrangChu1";
-            this.anhTrangChu1.Size = new System.Drawing.Size(1151, 509);
-            this.anhTrangChu1.TabIndex = 9;
-            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -454,13 +454,13 @@
             this.Text = "GUI_TrangChu";
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.paneltrangchu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.paneltrangchu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

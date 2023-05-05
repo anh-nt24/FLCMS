@@ -267,11 +267,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvkt);
-            this.groupBox2.Location = new System.Drawing.Point(10, 3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(608, 482);
+            this.groupBox2.Size = new System.Drawing.Size(608, 498);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách kì thi";

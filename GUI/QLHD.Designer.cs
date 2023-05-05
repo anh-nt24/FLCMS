@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtnd = new System.Windows.Forms.TextBox();
+            this.txtnl = new System.Windows.Forms.Label();
+            this.txtthoihan = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtngaylap = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,10 +48,6 @@
             this.btnthem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvhd = new System.Windows.Forms.DataGridView();
-            this.txtthoihan = new System.Windows.Forms.Label();
-            this.txthethan = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,9 +58,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtnd);
+            this.panel1.Controls.Add(this.txtnl);
             this.panel1.Controls.Add(this.txtthoihan);
-            this.panel1.Controls.Add(this.txthethan);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtngaylap);
             this.panel1.Controls.Add(this.label6);
@@ -77,6 +77,47 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(545, 460);
             this.panel1.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(52, 181);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Điều khoản chính";
+            // 
+            // txtnd
+            // 
+            this.txtnd.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtnd.Location = new System.Drawing.Point(181, 142);
+            this.txtnd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnd.Multiline = true;
+            this.txtnd.Name = "txtnd";
+            this.txtnd.Size = new System.Drawing.Size(250, 74);
+            this.txtnd.TabIndex = 69;
+            this.txtnd.Tag = "";
+            // 
+            // txtnl
+            // 
+            this.txtnl.AutoSize = true;
+            this.txtnl.ForeColor = System.Drawing.Color.Black;
+            this.txtnl.Location = new System.Drawing.Point(76, 287);
+            this.txtnl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtnl.Name = "txtnl";
+            this.txtnl.Size = new System.Drawing.Size(59, 16);
+            this.txtnl.TabIndex = 68;
+            this.txtnl.Text = "Thời hạn";
+            // 
+            // txtthoihan
+            // 
+            this.txtthoihan.Location = new System.Drawing.Point(182, 281);
+            this.txtthoihan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtthoihan.Name = "txtthoihan";
+            this.txtthoihan.Size = new System.Drawing.Size(249, 22);
+            this.txtthoihan.TabIndex = 67;
             // 
             // label7
             // 
@@ -151,6 +192,7 @@
             this.btnhuy.TabIndex = 35;
             this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = false;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnxoa
             // 
@@ -162,6 +204,7 @@
             this.btnxoa.TabIndex = 37;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // groupBox3
             // 
@@ -196,6 +239,7 @@
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btntimkiem.UseVisualStyleBackColor = false;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnsua
             // 
@@ -207,6 +251,7 @@
             this.btnsua.TabIndex = 38;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnthem
             // 
@@ -218,6 +263,7 @@
             this.btnthem.TabIndex = 39;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox2
             // 
@@ -240,49 +286,9 @@
             this.dgvhd.Name = "dgvhd";
             this.dgvhd.RowHeadersWidth = 51;
             this.dgvhd.RowTemplate.Height = 24;
-            this.dgvhd.Size = new System.Drawing.Size(594, 473);
+            this.dgvhd.Size = new System.Drawing.Size(594, 454);
             this.dgvhd.TabIndex = 5;
-            // 
-            // txtthoihan
-            // 
-            this.txtthoihan.AutoSize = true;
-            this.txtthoihan.ForeColor = System.Drawing.Color.Black;
-            this.txtthoihan.Location = new System.Drawing.Point(76, 287);
-            this.txtthoihan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtthoihan.Name = "txtthoihan";
-            this.txtthoihan.Size = new System.Drawing.Size(59, 16);
-            this.txtthoihan.TabIndex = 68;
-            this.txtthoihan.Text = "Thời hạn";
-            // 
-            // txthethan
-            // 
-            this.txthethan.Location = new System.Drawing.Point(182, 281);
-            this.txthethan.Margin = new System.Windows.Forms.Padding(4);
-            this.txthethan.Name = "txthethan";
-            this.txthethan.Size = new System.Drawing.Size(249, 22);
-            this.txthethan.TabIndex = 67;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(52, 181);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Điều khoản chính";
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(181, 142);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 74);
-            this.textBox1.TabIndex = 69;
-            this.textBox1.Tag = "";
+            this.dgvhd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvhd_CellContentClick);
             // 
             // QLHD
             // 
@@ -304,8 +310,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label txtthoihan;
-        private System.Windows.Forms.DateTimePicker txthethan;
+        private System.Windows.Forms.Label txtnl;
+        private System.Windows.Forms.DateTimePicker txtthoihan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker txtngaylap;
         private System.Windows.Forms.Label label6;
@@ -322,6 +328,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvhd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnd;
     }
 }

@@ -58,7 +58,7 @@ namespace GUI
                     if (so < 10)
                         txtmahv.Text = "MaHV00" + (so + 1).ToString();
                     else if (so + 1 < 100)
-                        txtmahv.Text = "MaHV00" + (so + 1).ToString();
+                        txtmahv.Text = "MaHV0" + (so + 1).ToString();
                 }
                 HocVien u = new HocVien(txtmahv.Text, ten, diachi,ngaysinh,sdtgd,sdtcn,macn);
                 hvbus.InsertHV(u);

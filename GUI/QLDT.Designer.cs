@@ -81,7 +81,7 @@
             // txtkq
             // 
             this.txtkq.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtkq.Location = new System.Drawing.Point(140, 142);
+            this.txtkq.Location = new System.Drawing.Point(140, 147);
             this.txtkq.Margin = new System.Windows.Forms.Padding(4);
             this.txtkq.Multiline = true;
             this.txtkq.Name = "txtkq";
@@ -111,7 +111,7 @@
             this.cbdd.Items.AddRange(new object[] {
             "Tham gia",
             "Không tham gia"});
-            this.cbdd.Location = new System.Drawing.Point(141, 188);
+            this.cbdd.Location = new System.Drawing.Point(141, 193);
             this.cbdd.Name = "cbdd";
             this.cbdd.Size = new System.Drawing.Size(249, 24);
             this.cbdd.TabIndex = 68;
@@ -120,7 +120,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(40, 112);
+            this.label7.Location = new System.Drawing.Point(40, 117);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 16);
@@ -129,7 +129,7 @@
             // 
             // txtngay
             // 
-            this.txtngay.Location = new System.Drawing.Point(141, 106);
+            this.txtngay.Location = new System.Drawing.Point(141, 111);
             this.txtngay.Margin = new System.Windows.Forms.Padding(4);
             this.txtngay.Name = "txtngay";
             this.txtngay.Size = new System.Drawing.Size(249, 22);
@@ -139,7 +139,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(43, 196);
+            this.label8.Location = new System.Drawing.Point(43, 201);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 16);
@@ -172,7 +172,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(43, 156);
+            this.label1.Location = new System.Drawing.Point(43, 161);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
@@ -182,7 +182,7 @@
             // btnhuy
             // 
             this.btnhuy.BackColor = System.Drawing.Color.Red;
-            this.btnhuy.Location = new System.Drawing.Point(405, 245);
+            this.btnhuy.Location = new System.Drawing.Point(407, 263);
             this.btnhuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(75, 33);
@@ -194,7 +194,7 @@
             // btnxoa
             // 
             this.btnxoa.BackColor = System.Drawing.Color.White;
-            this.btnxoa.Location = new System.Drawing.Point(300, 245);
+            this.btnxoa.Location = new System.Drawing.Point(302, 263);
             this.btnxoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(75, 33);
@@ -214,7 +214,7 @@
             this.groupBox3.Size = new System.Drawing.Size(382, 58);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tìm kiếm theo tên kì thi";
+            this.groupBox3.Text = "Tìm kiếm theo mã kì thi";
             // 
             // cbten
             // 
@@ -241,7 +241,7 @@
             // btnsua
             // 
             this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnsua.Location = new System.Drawing.Point(190, 245);
+            this.btnsua.Location = new System.Drawing.Point(192, 263);
             this.btnsua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(75, 33);
@@ -253,7 +253,7 @@
             // btnthem
             // 
             this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnthem.Location = new System.Drawing.Point(88, 245);
+            this.btnthem.Location = new System.Drawing.Point(90, 263);
             this.btnthem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(75, 33);
@@ -269,7 +269,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(608, 482);
+            this.groupBox2.Size = new System.Drawing.Size(608, 508);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách điểm thi";
