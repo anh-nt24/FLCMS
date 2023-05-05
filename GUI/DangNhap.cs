@@ -15,7 +15,6 @@ namespace GUI
 {
     public partial class DangNhap : Form
     {
-        
         public DangNhap()
         {
             InitializeComponent();
@@ -27,8 +26,19 @@ namespace GUI
         NguoiDungBUS ndbus = new NguoiDungBUS();
         private void btndn_Click(object sender, EventArgs e)
         {
-            NguoiDung u = new NguoiDung(txtten.Text, txtmk.Text);
-            if (ndbus.CheckLogin(u))
+            NguoiDung u = new NguoiDung(txtten.Text, BaoMat.SaltedHash(txtmk.Text));
+            string sql = "select * from NguoiDung where Taikhoan= N'" + txtten.Text + "' and MatKhau = N'" + BaoMat.SaltedHash(txtmk.Text) + "'";
+            DataTable dt= ndbus.DatagvFind(sql);
+            if (dt.Rows.Count>0)
+            {
+                MessageBox.Show("Đăng nhập hệ thống thành công!", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                TrangChu f = new TrangChu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString(), dt.Rows[0][7].ToString(), dt.Rows[0][8].ToString(), dt.Rows[0][9].ToString());
+                f.Show();
+            }
+            else
+                MessageBox.Show("Đăng nhập thất bại! ");
+            /*if (ndbus.CheckLogin(u))
             {
                 MessageBox.Show("Đăng nhập hệ thống thành công! ");
                 this.Hide();
@@ -37,8 +47,8 @@ namespace GUI
                 this.Close();
             }
             else
-                    MessageBox.Show("Đăng nhập thất bại! ");
-            
+                    MessageBox.Show("Đăng nhập thất bại! "); */
+
         }
         private void cbmk_CheckedChanged(object sender, EventArgs e)
         {
@@ -84,6 +94,11 @@ namespace GUI
             {
                 lbdn.Text = "";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

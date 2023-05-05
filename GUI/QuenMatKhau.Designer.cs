@@ -252,6 +252,7 @@
             this.txtmk2.Location = new System.Drawing.Point(224, 109);
             this.txtmk2.Multiline = true;
             this.txtmk2.Name = "txtmk2";
+            this.txtmk2.PasswordChar = '*';
             this.txtmk2.Size = new System.Drawing.Size(270, 34);
             this.txtmk2.TabIndex = 8;
             // 
@@ -270,6 +271,7 @@
             this.txtmk1.Location = new System.Drawing.Point(224, 40);
             this.txtmk1.Multiline = true;
             this.txtmk1.Name = "txtmk1";
+            this.txtmk1.PasswordChar = '*';
             this.txtmk1.Size = new System.Drawing.Size(270, 34);
             this.txtmk1.TabIndex = 6;
             this.txtmk1.Leave += new System.EventHandler(this.txtmk1_leave);

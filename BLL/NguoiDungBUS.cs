@@ -32,6 +32,10 @@ namespace BUS
         {
             nd.Thaydoimk(nguoidung);
         }
+        public void Thaydoimkkodk(NguoiDung nguoidung)
+        {
+            nd.Thaydoimkkodk(nguoidung);
+        }
         public void InsertND(NguoiDung nguoidung)
         {
             nd.InsertND(nguoidung);

@@ -33,6 +33,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.2.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.2.3\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Drawing.Common, Version=2023.4.4.0, Culture=neutral, PublicKeyToken=8d7e55c97b3e9835, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.System.Drawing.2023.4.4\lib\netstandard2.0\IronSoftware.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IronXL, Version=2023.5.4.0, Culture=neutral, PublicKeyToken=0f5804b6690bad1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronXL.Excel.2023.5.4\lib\netstandard2.0\IronXL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1577.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -42,8 +70,31 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.3\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,73 +106,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="anhTrangChu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="anhTrangChu.Designer.cs">
-      <DependentUpon>anhTrangChu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLCN.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QLCN.Designer.cs">
-      <DependentUpon>QLCN.cs</DependentUpon>
-    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachGiaoVien.Designer.cs">
+      <DependentUpon>DanhSachGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachHocVien.Designer.cs">
+      <DependentUpon>DanhSachHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachKhoaHoc.Designer.cs">
+      <DependentUpon>DanhSachKhoaHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLDT.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiChungNhan.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDT.Designer.cs">
-      <DependentUpon>QLDT.cs</DependentUpon>
+    <Compile Include="QuanLiChungNhan.Designer.cs">
+      <DependentUpon>QuanLiChungNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLGV.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiDiemThi.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLGV.Designer.cs">
-      <DependentUpon>QLGV.cs</DependentUpon>
+    <Compile Include="QuanLiDiemThi.Designer.cs">
+      <DependentUpon>QuanLiDiemThi.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLHD.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiGiaoVien.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLHD.Designer.cs">
-      <DependentUpon>QLHD.cs</DependentUpon>
+    <Compile Include="QuanLiGiaoVien.Designer.cs">
+      <DependentUpon>QuanLiGiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLHV.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiHocVien.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLHV.Designer.cs">
-      <DependentUpon>QLHV.cs</DependentUpon>
+    <Compile Include="QuanLiHocVien.Designer.cs">
+      <DependentUpon>QuanLiHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLKH.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiHopDong.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLKH.Designer.cs">
-      <DependentUpon>QLKH.cs</DependentUpon>
+    <Compile Include="QuanLiHopDong.Designer.cs">
+      <DependentUpon>QuanLiHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLKT.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiKhoaHoc.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLKT.Designer.cs">
-      <DependentUpon>QLKT.cs</DependentUpon>
+    <Compile Include="QuanLiKhoaHoc.Designer.cs">
+      <DependentUpon>QuanLiKhoaHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLLH.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiKiThi.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLLH.Designer.cs">
-      <DependentUpon>QLLH.cs</DependentUpon>
+    <Compile Include="QuanLiKiThi.Designer.cs">
+      <DependentUpon>QuanLiKiThi.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLND.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="QuanLiLopHoc.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLND.Designer.cs">
-      <DependentUpon>QLND.cs</DependentUpon>
+    <Compile Include="QuanLiLopHoc.Designer.cs">
+      <DependentUpon>QuanLiLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiNguoiDung.Designer.cs">
+      <DependentUpon>QuanLiNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="QuenMatKhau.cs">
       <SubType>Form</SubType>
@@ -129,21 +192,42 @@
     <Compile Include="QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThayDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThayDoiMatKhau.Designer.cs">
+      <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.Designer.cs">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="anhTrangChu.resx">
-      <DependentUpon>anhTrangChu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QLCN.resx">
-      <DependentUpon>QLCN.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachGiaoVien.resx">
+      <DependentUpon>DanhSachGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachHocVien.resx">
+      <DependentUpon>DanhSachHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachKhoaHoc.resx">
+      <DependentUpon>DanhSachKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,32 +239,44 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLDT.resx">
-      <DependentUpon>QLDT.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiChungNhan.resx">
+      <DependentUpon>QuanLiChungNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLGV.resx">
-      <DependentUpon>QLGV.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiDiemThi.resx">
+      <DependentUpon>QuanLiDiemThi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLHD.resx">
-      <DependentUpon>QLHD.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiGiaoVien.resx">
+      <DependentUpon>QuanLiGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLHV.resx">
-      <DependentUpon>QLHV.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiHocVien.resx">
+      <DependentUpon>QuanLiHocVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLKH.resx">
-      <DependentUpon>QLKH.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiHopDong.resx">
+      <DependentUpon>QuanLiHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLKT.resx">
-      <DependentUpon>QLKT.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiKhoaHoc.resx">
+      <DependentUpon>QuanLiKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLLH.resx">
-      <DependentUpon>QLLH.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiKiThi.resx">
+      <DependentUpon>QuanLiKiThi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLND.resx">
-      <DependentUpon>QLND.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLiLopHoc.resx">
+      <DependentUpon>QuanLiLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiNguoiDung.resx">
+      <DependentUpon>QuanLiNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThayDoiMatKhau.resx">
+      <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinCaNhan.resx">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
@@ -279,6 +375,16 @@
     <None Include="Resources\power-off.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\reset-password.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\certificate.png" />
+    <None Include="Resources\contract.png" />
+    <None Include="Resources\teacher %281%29.png" />
+    <None Include="Resources\teacher %282%29.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\343941574_169911992700384_5311502437906046923_n.png" />
+    <None Include="Resources\Nen-xanh-duong-pastel.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -292,6 +398,35 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

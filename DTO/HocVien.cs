@@ -15,6 +15,7 @@ namespace DTO
         public string SDTGiaDinh { get; set; }
         public string SDTCaNhan { get; set; }
         public string MaChungNhan { get; set; }
+        public byte[] Anh { get; set; }
 
         public HocVien() { }
         public HocVien(string mahv, string hoten, string diachi, string ngaysinh, string sdtgd, string sdtcn, string macn)
@@ -26,6 +27,17 @@ namespace DTO
             this.SDTGiaDinh = sdtgd;
             this.SDTCaNhan = sdtcn;
             this.MaChungNhan = macn;
+        }
+        public HocVien(string mahv, string hoten, string diachi, string ngaysinh, string sdtgd, string sdtcn, string macn, byte[] anh)
+        {
+            this.MaHocVien = mahv;
+            this.HoTen = hoten;
+            this.DiaChi = diachi;
+            this.NgaySinh = ngaysinh;
+            this.SDTGiaDinh = sdtgd;
+            this.SDTCaNhan = sdtcn;
+            this.MaChungNhan = macn;
+            this.Anh = anh;
         }
     }
 }

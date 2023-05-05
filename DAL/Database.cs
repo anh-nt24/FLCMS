@@ -92,6 +92,16 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+        public void ThaydoimkkodkDAL(NguoiDung nguoidung)
+        {
+            SqlConnection connection = SqlConnectionData.GetConnection();
+            string query = "UPDATE NguoiDung SET nguoidung.MatKhau = @MatKhau ";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MatKhau", nguoidung.MatKhau);
+                command.ExecuteNonQuery();
+            }
+        }
         public void InsertNDDAL(NguoiDung nguoidung)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
@@ -384,8 +394,8 @@ namespace DAL
         public void InsertHVDAL(HocVien hocvien)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
-            string query = "INSERT INTO HocVien(MaHocVien,HoTen,DiaChi,NgaySinh,SDTGiaDinh,SDTCaNhan,MaChungNhan) " +
-                           "VALUES (@MaHocVien,@HoTen,@DiaChi,@NgaySinh,@SDTGiaDinh,@SDTCaNhan,@MaChungNhan)";
+            string query = "INSERT INTO HocVien(MaHocVien,HoTen,DiaChi,NgaySinh,SDTGiaDinh,SDTCaNhan,MaChungNhan,Anh) " +
+                           "VALUES (@MaHocVien,@HoTen,@DiaChi,@NgaySinh,@SDTGiaDinh,@SDTCaNhan,@MaChungNhan,@Anh)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -396,13 +406,14 @@ namespace DAL
                 command.Parameters.AddWithValue("@SDTGiaDinh", hocvien.SDTGiaDinh);
                 command.Parameters.AddWithValue("@SDTCaNhan", hocvien.SDTCaNhan);
                 command.Parameters.AddWithValue("@MaChungNhan", hocvien.MaChungNhan);
+                command.Parameters.AddWithValue("@Anh", hocvien.Anh);
                 command.ExecuteNonQuery();
             }
         }
         public void UpdateHVDAL(HocVien hocvien)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
-            string query = "UPDATE HocVien SET HoTen= @HoTen,DiaChi= @DiaChi,NgaySinh=@NgaySinh,SDTGiaDinh=@SDTGiaDinh,SDTCaNhan=@SDTCaNhan,MaChungNhan=@MaChungNhan " +
+            string query = "UPDATE HocVien SET HoTen= @HoTen,DiaChi= @DiaChi,NgaySinh=@NgaySinh,SDTGiaDinh=@SDTGiaDinh,SDTCaNhan=@SDTCaNhan,MaChungNhan=@MaChungNhan,Anh=@Anh " +
                            "WHERE MaHocVien= @MaHocVien";
 
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -414,6 +425,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@SDTGiaDinh", hocvien.SDTGiaDinh);
                 command.Parameters.AddWithValue("@SDTCaNhan", hocvien.SDTCaNhan);
                 command.Parameters.AddWithValue("@MaChungNhan", hocvien.MaChungNhan);
+                command.Parameters.AddWithValue("@Anh", hocvien.Anh);
                 command.ExecuteNonQuery();
             }
         }

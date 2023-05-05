@@ -31,6 +31,10 @@ namespace DAL
         public void Thaydoimk(NguoiDung nguoidung)
         {
             ThaydoimkDAL(nguoidung);
+        }
+        public void Thaydoimkkodk(NguoiDung nguoidung)
+        {
+            ThaydoimkkodkDAL(nguoidung);
 
         }
         public void InsertND(NguoiDung nguoidung)
