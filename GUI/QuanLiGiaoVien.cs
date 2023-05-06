@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,57 +62,90 @@ namespace GUI
             cbmalop.DataSource = gvbus.LoadComboBox(sql3);
         }
         GiaoVienBUS gvbus = new GiaoVienBUS();
+
+        private void btnanh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Chọn ảnh";
+            openFileDialog.Filter = "Image Files (.jpg; *.png; *.bmp)|.jpg; *.png; *.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pic2.ImageLocation = openFileDialog.FileName;
+            }
+        }
+
+        private void QuanLiGiaoVien_Load(object sender, EventArgs e)
+        {
+            dgvgv.DataSource = gvbus.DatagvFind("Select * from GiaoVien");
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dgvgv.Columns[10];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+        }
+        private byte[] ImageToByteArray(PictureBox picture)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            picture.Image.Save(memoryStream, picture.Image.RawFormat);
+            return memoryStream.ToArray();
+        }
         private void btnthem_Click(object sender, EventArgs e)
         {
-            string ten = txthoten.Text;
-            string diachi=txtdiachi.Text;
-            string sdt= txtsdt.Text;
-            string ngaysinh= txtngaysinh.Value.ToString("yyyy-MM-dd");
-            string ngayvl = txtnvl.Value.ToString("yyyy-MM-dd");
-            string chuyenmon = txtcm.Text;
-            string bangcap = txtbc.Text;
-            string mahd = cbhd.Text;
-            string malop = cbmalop.Text;
-
-            if (ten.Equals("") || diachi.Equals("") || sdt.Equals("") || chuyenmon.Equals("") || bangcap.Equals("") || mahd.Equals("") || malop.Equals(""))
-            { 
-                MessageBox.Show("Cần điền đầy đủ thông tin ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (pic2.Image == null)
+            {
+                MessageBox.Show("Cần thêm ảnh", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                int count = 0;
-                count = dgvgv.Rows.Count;//dếm tất cả các dòng trong dgv r gán cho count
-                if (count == 0 || count == 1)
+                byte[] anh = ImageToByteArray(pic2);
+                string ten = txthoten.Text;
+                string diachi = txtdiachi.Text;
+                string sdt = txtsdt.Text;
+                string ngaysinh = txtngaysinh.Value.ToString("yyyy-MM-dd");
+                string ngayvl = txtnvl.Value.ToString("yyyy-MM-dd");
+                string chuyenmon = txtcm.Text;
+                string bangcap = txtbc.Text;
+                string mahd = cbhd.Text;
+                string malop = cbmalop.Text;
+
+                if (ten.Equals("") || diachi.Equals("") || sdt.Equals("") || chuyenmon.Equals("") || bangcap.Equals("") || mahd.Equals("") || malop.Equals(""))
                 {
-                    txtmagv.Text = "MaGV001";
+                    MessageBox.Show("Cần điền đầy đủ thông tin ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    DataGridViewRow dataGridViewRow = dgvgv.Rows[count - 2];
-                    string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
-                    int so = Int32.Parse(chuoi);
-                    if (so < 10)
-                        txtmagv.Text = "MaGV00" + (so + 1).ToString();
-                    else if (so + 1 < 100)
-                        txtmagv.Text = "MaGV0" + (so + 1).ToString();
+                    int count = 0;
+                    count = dgvgv.Rows.Count;//dếm tất cả các dòng trong dgv r gán cho count
+                    if (count == 0)
+                    {
+                        txtmagv.Text = "MaGV001";
+                    }
+                    else
+                    {
+                        DataGridViewRow dataGridViewRow = dgvgv.Rows[count - 1];
+                        string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
+                        int so = Int32.Parse(chuoi);
+                        if (so < 9)
+                            txtmagv.Text = "MaGV00" + (so + 1).ToString();
+                        else if (so + 1 < 100)
+                            txtmagv.Text = "MaGV0" + (so + 1).ToString();
+                    }
+                    GiaoVien u = new GiaoVien(txtmagv.Text, ten, diachi, sdt, ngaysinh, ngayvl, chuyenmon, bangcap, mahd, malop, anh);
+                    gvbus.InsertGV(u);
+                    MessageBox.Show("Thêm giáo viên thành công!");
+                    txtmagv.Text = "";
+                    txthoten.Text = "";
+                    txtdiachi.Text = "";
+                    txtngaysinh.Text = "";
+                    txtcm.Text = "";
+                    txtbc.Text = "";
+                    cbmalop.Text = "";
+                    cbhd.Text = "";
+                    cbten.DisplayMember = "HoTen";
+                    string sql1 = "select HoTen from GiaoVien";
+                    cbten.DataSource = gvbus.LoadComboBox(sql1);
                 }
-                GiaoVien u = new GiaoVien(txtmagv.Text, ten, diachi,sdt,ngaysinh,ngayvl,chuyenmon,bangcap,mahd,malop);
-                gvbus.InsertGV(u);
-                MessageBox.Show("Thêm giáo viên thành công!");
-                txtmagv.Text = "";
-                txthoten.Text = "";
-                txtdiachi.Text = "";
-                txtngaysinh.Text = "";
-                txtcm.Text = "";
-                txtbc.Text = "";
-                cbmalop.Text = "";
-                cbhd.Text = "";
-                cbten.DisplayMember = "HoTen";
-                string sql1 = "select HoTen from GiaoVien";
-                cbten.DataSource = gvbus.LoadComboBox(sql1);
+                string sql = "select * from GiaoVien";
+                dgvgv.DataSource = gvbus.DatagvFind(sql);
             }
-            string sql = "select * from GiaoVien";
-            dgvgv.DataSource = gvbus.DatagvFind(sql);
         }
 
         private void btnhd_Click(object sender, EventArgs e)
@@ -128,7 +162,8 @@ namespace GUI
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            string magv=txtmagv.Text;
+            byte[] anh = ImageToByteArray(pic2);
+            string magv =txtmagv.Text;
             string ten = txthoten.Text;
             string diachi = txtdiachi.Text;
             string sdt = txtsdt.Text;
@@ -138,7 +173,7 @@ namespace GUI
             string bangcap = txtbc.Text;
             string mahd = cbhd.Text;
             string malop = cbmalop.Text;
-            GiaoVien u = new GiaoVien(magv, ten, diachi, sdt, ngaysinh, ngayvl, chuyenmon, bangcap, mahd, malop);
+            GiaoVien u = new GiaoVien(magv, ten, diachi, sdt, ngaysinh, ngayvl, chuyenmon, bangcap, mahd, malop,anh);
             gvbus.UpdateGV(u);
             MessageBox.Show("Chỉnh sửa giáo viên thành công!");
             string sql = "select * from GiaoVien";
@@ -152,6 +187,7 @@ namespace GUI
             txtcm.Text = "";
             txtbc.Text = "";
             cbmalop.Text = "";
+
             cbhd.Text = "";
             cbten.DisplayMember = "HoTen";
             string sql1 = "select HoTen from GiaoVien";
@@ -160,6 +196,7 @@ namespace GUI
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
+            byte[] anh = ImageToByteArray(pic2);
             string magv = txtmagv.Text;
             string ten = txthoten.Text;
             string diachi = txtdiachi.Text;
@@ -170,7 +207,7 @@ namespace GUI
             string bangcap = txtbc.Text;
             string mahd = cbhd.Text;
             string malop = cbmalop.Text;
-            GiaoVien u = new GiaoVien(magv, ten, diachi, sdt, ngaysinh, ngayvl, chuyenmon, bangcap, mahd, malop);
+            GiaoVien u = new GiaoVien(magv, ten, diachi, sdt, ngaysinh, ngayvl, chuyenmon, bangcap, mahd, malop, anh);
             gvbus.DeleteGV(u);
             MessageBox.Show("Xóa giáo viên thành công!");
             string sql = "select * from GiaoVien";
@@ -185,6 +222,7 @@ namespace GUI
             txtbc.Text = "";
             cbmalop.Text = "";
             cbhd.Text = "";
+            pic2.Image = null;
             cbten.DisplayMember = "HoTen";
             string sql1 = "select HoTen from GiaoVien";
             cbten.DataSource = gvbus.LoadComboBox(sql1);
@@ -202,6 +240,7 @@ namespace GUI
             txtbc.Text = "";
             cbmalop.Text = "";
             cbhd.Text = "";
+            pic2.Image = null;
             string sql = "select * from GiaoVien";
             dgvgv.DataSource = gvbus.DatagvFind(sql);
         }
@@ -227,6 +266,14 @@ namespace GUI
             txtbc.Text = dataGridViewRow.Cells[7].Value.ToString();
             cbhd.Text = dataGridViewRow.Cells[8].Value.ToString();
             cbmalop.Text = dataGridViewRow.Cells[9].Value.ToString();
+            if (dataGridViewRow.Cells[10].Value.ToString() != "")
+            {
+                MemoryStream memoryStream = new MemoryStream((byte[])dataGridViewRow.Cells[10].Value);
+                pic2.Image = Image.FromStream(memoryStream);
+            }
+            else
+                pic2.Image = null;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -70,7 +70,7 @@ namespace GUI
                     DataGridViewRow dataGridViewRow = dgvcn.Rows[count - 2];
                     string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
                     int so = Int32.Parse(chuoi);
-                    if (so < 10)
+                    if (so < 9)
                         txtmacn.Text = "MaCN00" + (so + 1).ToString();
                     else if (so + 1 < 100)
                         txtmacn.Text = "MaCN0" + (so + 1).ToString();

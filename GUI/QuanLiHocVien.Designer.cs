@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnanh = new System.Windows.Forms.Button();
+            this.pic2 = new System.Windows.Forms.PictureBox();
             this.btnhd = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,17 +59,14 @@
             this.dgvhv = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic2 = new System.Windows.Forms.PictureBox();
-            this.btnanh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhv)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +99,29 @@
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnanh
+            // 
+            this.btnanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnanh.Location = new System.Drawing.Point(54, 154);
+            this.btnanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnanh.Name = "btnanh";
+            this.btnanh.Size = new System.Drawing.Size(75, 33);
+            this.btnanh.TabIndex = 77;
+            this.btnanh.Text = "Ảnh";
+            this.btnanh.UseVisualStyleBackColor = false;
+            this.btnanh.Click += new System.EventHandler(this.btnanh_Click);
+            // 
+            // pic2
+            // 
+            this.pic2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pic2.Location = new System.Drawing.Point(25, 14);
+            this.pic2.Name = "pic2";
+            this.pic2.Size = new System.Drawing.Size(133, 128);
+            this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic2.TabIndex = 76;
+            this.pic2.TabStop = false;
+            this.pic2.Click += new System.EventHandler(this.pic2_Click);
+            // 
             // btnhd
             // 
             this.btnhd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -109,6 +132,17 @@
             this.btnhd.Text = "...";
             this.btnhd.UseVisualStyleBackColor = false;
             this.btnhd.Click += new System.EventHandler(this.btnhd_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources._return;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 208);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -369,6 +403,7 @@
             // 
             // dgvhv
             // 
+            this.dgvhv.AllowUserToAddRows = false;
             this.dgvhv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvhv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvhv.Location = new System.Drawing.Point(0, 1);
@@ -399,39 +434,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Quản Lý Học Viên";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources._return;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 70;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pic2
-            // 
-            this.pic2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pic2.Location = new System.Drawing.Point(25, 14);
-            this.pic2.Name = "pic2";
-            this.pic2.Size = new System.Drawing.Size(133, 128);
-            this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic2.TabIndex = 76;
-            this.pic2.TabStop = false;
-            // 
-            // btnanh
-            // 
-            this.btnanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnanh.Location = new System.Drawing.Point(54, 154);
-            this.btnanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnanh.Name = "btnanh";
-            this.btnanh.Size = new System.Drawing.Size(75, 33);
-            this.btnanh.TabIndex = 77;
-            this.btnanh.Text = "Ảnh";
-            this.btnanh.UseVisualStyleBackColor = false;
-            this.btnanh.Click += new System.EventHandler(this.btnanh_Click);
-            // 
             // QuanLiHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,18 +442,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
             this.Name = "QuanLiHocVien";
-            this.Text = "QuanLiHocVien";
+            this.Text = "Quản Lí Học Viên";
             this.Load += new System.EventHandler(this.QuanLiHocVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhv)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic2)).EndInit();
             this.ResumeLayout(false);
 
         }

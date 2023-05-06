@@ -18,6 +18,8 @@ namespace DTO
         public string BangCap { get; set; }
         public string MaHopDong { get; set; }
         public string MaLop { get; set; }
+        public byte[] Anh { get; set; }
+
 
 
         public GiaoVien() { }
@@ -34,5 +36,20 @@ namespace DTO
             this.MaHopDong = mahd;
             this.MaLop = malop;
         }
+        public GiaoVien(string magv, string hoten, string diachi, string sdt, string ns, string nvl, string chuyenmon, string bangcap, string mahd, string malop, byte[] anh)
+        {
+            this.MaGiaoVien = magv;
+            this.HoTen = hoten;
+            this.DiaChi = diachi;
+            this.Sdt = sdt;
+            this.NgaySinh = ns;
+            this.NgayVaoLam = nvl;
+            this.ChuyenMon = chuyenmon;
+            this.BangCap = bangcap;
+            this.MaHopDong = mahd;
+            this.MaLop = malop;
+            this.Anh = anh;
+        }
+
     }
 }

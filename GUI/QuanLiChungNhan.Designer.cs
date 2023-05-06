@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnhuy = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
             this.cbloai = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtngaycap = new System.Windows.Forms.DateTimePicker();
@@ -37,26 +43,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtten = new System.Windows.Forms.TextBox();
             this.txtmacn = new System.Windows.Forms.TextBox();
-            this.btnhuy = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbten = new System.Windows.Forms.ComboBox();
             this.btntimkiem = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
-            this.btnthem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvcn = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcn)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +78,80 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1150, 237);
             this.panel1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources._return;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 178);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnhuy);
+            this.groupBox1.Controls.Add(this.btnthem);
+            this.groupBox1.Controls.Add(this.btnsua);
+            this.groupBox1.Controls.Add(this.btnxoa);
+            this.groupBox1.Location = new System.Drawing.Point(130, 162);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(431, 58);
+            this.groupBox1.TabIndex = 68;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Các control";
+            // 
+            // btnhuy
+            // 
+            this.btnhuy.BackColor = System.Drawing.Color.Red;
+            this.btnhuy.Location = new System.Drawing.Point(343, 19);
+            this.btnhuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnhuy.Name = "btnhuy";
+            this.btnhuy.Size = new System.Drawing.Size(75, 33);
+            this.btnhuy.TabIndex = 35;
+            this.btnhuy.Text = "Hủy";
+            this.btnhuy.UseVisualStyleBackColor = false;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click_1);
+            // 
+            // btnthem
+            // 
+            this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnthem.Location = new System.Drawing.Point(26, 19);
+            this.btnthem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(75, 33);
+            this.btnthem.TabIndex = 39;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            // 
+            // btnsua
+            // 
+            this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnsua.Location = new System.Drawing.Point(128, 19);
+            this.btnsua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(75, 33);
+            this.btnsua.TabIndex = 38;
+            this.btnsua.Text = "Sửa";
+            this.btnsua.UseVisualStyleBackColor = false;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click_1);
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.BackColor = System.Drawing.Color.White;
+            this.btnxoa.Location = new System.Drawing.Point(238, 19);
+            this.btnxoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(75, 33);
+            this.btnxoa.TabIndex = 37;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click_1);
             // 
             // cbloai
             // 
@@ -168,30 +242,6 @@
             this.txtmacn.Size = new System.Drawing.Size(249, 34);
             this.txtmacn.TabIndex = 41;
             // 
-            // btnhuy
-            // 
-            this.btnhuy.BackColor = System.Drawing.Color.Red;
-            this.btnhuy.Location = new System.Drawing.Point(343, 19);
-            this.btnhuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(75, 33);
-            this.btnhuy.TabIndex = 35;
-            this.btnhuy.Text = "Hủy";
-            this.btnhuy.UseVisualStyleBackColor = false;
-            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click_1);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.BackColor = System.Drawing.Color.White;
-            this.btnxoa.Location = new System.Drawing.Point(238, 19);
-            this.btnxoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(75, 33);
-            this.btnxoa.TabIndex = 37;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = false;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click_1);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbten);
@@ -226,30 +276,6 @@
             this.btntimkiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btntimkiem.UseVisualStyleBackColor = false;
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click_1);
-            // 
-            // btnsua
-            // 
-            this.btnsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnsua.Location = new System.Drawing.Point(128, 19);
-            this.btnsua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(75, 33);
-            this.btnsua.TabIndex = 38;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.UseVisualStyleBackColor = false;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click_1);
-            // 
-            // btnthem
-            // 
-            this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnthem.Location = new System.Drawing.Point(26, 19);
-            this.btnthem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(75, 33);
-            this.btnthem.TabIndex = 39;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = false;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // groupBox2
             // 
@@ -295,32 +321,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Quản Lý Chứng Nhận";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnhuy);
-            this.groupBox1.Controls.Add(this.btnthem);
-            this.groupBox1.Controls.Add(this.btnsua);
-            this.groupBox1.Controls.Add(this.btnxoa);
-            this.groupBox1.Location = new System.Drawing.Point(130, 162);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(431, 58);
-            this.groupBox1.TabIndex = 68;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Các control";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources._return;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 178);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // QuanLiChungNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,16 +330,16 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Name = "QuanLiChungNhan";
-            this.Text = "QuanLiChungNhan";
+            this.Text = "Quản Lý Chứng Nhận";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

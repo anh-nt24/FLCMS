@@ -184,6 +184,7 @@
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(277, 34);
             this.txtten.TabIndex = 3;
+            this.txtten.TextChanged += new System.EventHandler(this.txtten_TextChanged);
             this.txtten.Leave += new System.EventHandler(this.btndn_leave);
             // 
             // label1
@@ -207,7 +208,7 @@
             this.ClientSize = new System.Drawing.Size(989, 592);
             this.Controls.Add(this.groupBox1);
             this.Name = "DangNhap";
-            this.Text = "GUI_DangNhap";
+            this.Text = "Đăng nhập";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

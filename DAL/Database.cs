@@ -670,8 +670,8 @@ namespace DAL
         public void InsertGVDAL(GiaoVien giaovien)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
-            string query = "INSERT INTO GiaoVien(MaGiaoVien,HoTen,DiaChi,Sdt,NgaySinh,NgayVaoLam,ChuyenMon,BangCap,MaHopDong,MaLop) " +
-                           "VALUES (@MaGiaoVien,@HoTen,@DiaChi,@Sdt,@NgaySinh,@NgayVaoLam,@ChuyenMon,@BangCap,@MaHopDong,@MaLop)";
+            string query = "INSERT INTO GiaoVien(MaGiaoVien,HoTen,DiaChi,Sdt,NgaySinh,NgayVaoLam,ChuyenMon,BangCap,MaHopDong,MaLop,Anh) " +
+                           "VALUES (@MaGiaoVien,@HoTen,@DiaChi,@Sdt,@NgaySinh,@NgayVaoLam,@ChuyenMon,@BangCap,@MaHopDong,@MaLop,@Anh)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -685,13 +685,14 @@ namespace DAL
                 command.Parameters.AddWithValue("@BangCap", giaovien.BangCap);
                 command.Parameters.AddWithValue("@MaHopDong", giaovien.MaHopDong);
                 command.Parameters.AddWithValue("@MaLop", giaovien.MaLop);
+                command.Parameters.AddWithValue("@Anh", giaovien.Anh);
                 command.ExecuteNonQuery();
             }
         }
         public void UpdateGVDAL(GiaoVien giaovien)
         {
             SqlConnection connection = SqlConnectionData.GetConnection();
-            string query = "UPDATE GiaoVien SET HoTen= @HoTen,DiaChi= @DiaChi,Sdt=@Sdt,NgaySinh=@NgaySinh,NgayVaoLam=@NgayVaoLam,ChuyenMon=@ChuyenMon,BangCap=@BangCap,MaHopDong=@MaHopDong,MaLop=@MaLop " +
+            string query = "UPDATE GiaoVien SET HoTen= @HoTen,DiaChi= @DiaChi,Sdt=@Sdt,NgaySinh=@NgaySinh,NgayVaoLam=@NgayVaoLam,ChuyenMon=@ChuyenMon,BangCap=@BangCap,MaHopDong=@MaHopDong,MaLop=@MaLop,Anh=@Anh " +
                            "WHERE MaGiaoVien= @MaGiaoVien";
 
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -706,6 +707,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@BangCap", giaovien.BangCap);
                 command.Parameters.AddWithValue("@MaHopDong", giaovien.MaHopDong);
                 command.Parameters.AddWithValue("@MaLop", giaovien.MaLop);
+                command.Parameters.AddWithValue("@Anh", giaovien.Anh);
                 command.ExecuteNonQuery();
             }
         }

@@ -80,7 +80,7 @@ namespace GUI
                     DataGridViewRow dataGridViewRow = dgvkh.Rows[count - 2];
                     string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
                     int so = Int32.Parse(chuoi);
-                    if (so < 10)
+                    if (so < 9)
                         txtmakh.Text = "MaKH00" + (so + 1).ToString();
                     else if (so + 1 < 100)
                         txtmakh.Text = "MaKH0" + (so + 1).ToString();

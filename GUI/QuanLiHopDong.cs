@@ -78,7 +78,7 @@ namespace GUI
                     DataGridViewRow dataGridViewRow = dgvhd.Rows[count - 2];
                     string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
                     int so = Int32.Parse(chuoi);
-                    if (so < 10)
+                    if (so < 9)
                         txtmahd.Text = "MaHD00" + (so + 1).ToString();
                     else if (so + 1 < 100)
                         txtmahd.Text = "MaHD00" + (so + 1).ToString();

@@ -283,7 +283,7 @@
             this.ClientSize = new System.Drawing.Size(739, 566);
             this.Controls.Add(this.groupBox1);
             this.Name = "QuenMatKhau";
-            this.Text = "GUI_QuenMatKhau";
+            this.Text = "Quên Mật Khẩu";
             this.groupBox1.ResumeLayout(false);
             this.captcha.ResumeLayout(false);
             this.captcha.PerformLayout();

@@ -86,54 +86,66 @@ namespace GUI
 
         }
 
+        private void pic2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnthem_Click(object sender, EventArgs e)
         {
-            byte[] anh = ImageToByteArray(pic2);
-            string ten = txthoten.Text;
-            string diachi = txtdiachi.Text;
-            string ngaysinh = txtngaysinh.Value.ToString("yyyy-MM-dd");
-            string sdtgd = txtsdtgd.Text;
-            string sdtcn = txtsdtcn.Text;
-            string macn = cbmacn.Text;
-
-            if (ten.Equals("") || diachi.Equals("") || sdtgd.Equals("") || sdtcn.Equals("") || macn.Equals(""))
+            if (pic2.Image == null)
             {
-                MessageBox.Show("Cần điền đầy đủ thông tin ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cần thêm ảnh ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                int count = 0;
-                count = dgvhv.Rows.Count;//dếm tất cả các dòng trong dgv r gán cho count
-                if (count == 0 || count == 1)
+                byte[] anh = ImageToByteArray(pic2);
+                string ten = txthoten.Text;
+                string diachi = txtdiachi.Text;
+                string ngaysinh = txtngaysinh.Value.ToString("yyyy-MM-dd");
+                string sdtgd = txtsdtgd.Text;
+                string sdtcn = txtsdtcn.Text;
+                string macn = cbmacn.Text;
+
+                if (ten.Equals("") || diachi.Equals("") || sdtgd.Equals("") || sdtcn.Equals("") || macn.Equals(""))
                 {
-                    txtmahv.Text = "MaHV001";
+                    MessageBox.Show("Cần điền đầy đủ thông tin ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    DataGridViewRow dataGridViewRow = dgvhv.Rows[count - 2];
-                    string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
-                    int so = Int32.Parse(chuoi);
-                    if (so < 10)
-                        txtmahv.Text = "MaHV00" + (so + 1).ToString();
-                    else if (so + 1 < 100)
-                        txtmahv.Text = "MaHV0" + (so + 1).ToString();
+                    int count = 0;
+                    count = dgvhv.Rows.Count;//dếm tất cả các dòng trong dgv r gán cho count
+                    if (count == 0)
+                    {
+                        txtmahv.Text = "MaHV001";
+                    }
+                    else
+                    {
+                        DataGridViewRow dataGridViewRow = dgvhv.Rows[count - 1];
+                        string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
+                        int so = Int32.Parse(chuoi);
+                        if (so < 9)
+                            txtmahv.Text = "MaHV00" + (so + 1).ToString();
+                        else if (so + 1 < 100)
+                            txtmahv.Text = "MaHV0" + (so + 1).ToString();
+                    }
+                    HocVien u = new HocVien(txtmahv.Text, ten, diachi, ngaysinh, sdtgd, sdtcn, macn, anh);
+                    hvbus.InsertHV(u);
+                    MessageBox.Show("Thêm Học Viên thành công!");
+                    txtmahv.Text = "";
+                    txthoten.Text = "";
+                    txtdiachi.Text = "";
+                    txtngaysinh.Text = "";
+                    txtsdtgd.Text = "";
+                    txtsdtcn.Text = "";
+                    cbmacn.Text = "";
+                    cbten.DisplayMember = "HoTen";
+                    string sql1 = "select HoTen from HocVien";
+                    cbten.DataSource = hvbus.LoadComboBox(sql1);
                 }
-                HocVien u = new HocVien(txtmahv.Text, ten, diachi, ngaysinh, sdtgd, sdtcn, macn,anh);
-                hvbus.InsertHV(u);
-                MessageBox.Show("Thêm Học Viên thành công!");
-                txtmahv.Text = "";
-                txthoten.Text = "";
-                txtdiachi.Text = "";
-                txtngaysinh.Text = "";
-                txtsdtgd.Text = "";
-                txtsdtcn.Text = "";
-                cbmacn.Text = "";
-                cbten.DisplayMember = "HoTen";
-                string sql1 = "select HoTen from HocVien";
-                cbten.DataSource = hvbus.LoadComboBox(sql1);
+                string sql = "select * from HocVien";
+                dgvhv.DataSource = hvbus.DatagvFind(sql);
             }
-            string sql = "select * from HocVien";
-            dgvhv.DataSource = hvbus.DatagvFind(sql);
         }
 
         private void btnbangcn_Click(object sender, EventArgs e)

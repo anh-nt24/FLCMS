@@ -87,7 +87,7 @@ namespace GUI
                     DataGridViewRow dataGridViewRow = dgvnd.Rows[count - 2];
                     string chuoi = dataGridViewRow.Cells[0].Value.ToString().Substring(4, 3);
                     int so = Int32.Parse(chuoi);
-                    if (so < 10)
+                    if (so < 9)
                         txtmand.Text = "MaND00" + (so + 1).ToString();//cộng dồn lên khi thỏa mãn if
                     else if (so + 1 < 100)
                         txtmand.Text = "MaND0" + (so + 1).ToString();

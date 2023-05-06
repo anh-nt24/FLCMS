@@ -21,6 +21,10 @@ namespace GUI
         }
         string Taikhoan = "", MatKhau = "", Quyen = "", MaND = "", HoTen = "", DiaChi = "", Sdt = "", NgaySinh = "", ViTriLamViec = "", Email = "";
 
+        private void dgvhv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {

@@ -52,6 +52,7 @@
             this.dgvhv.RowTemplate.Height = 24;
             this.dgvhv.Size = new System.Drawing.Size(1092, 418);
             this.dgvhv.TabIndex = 6;
+            this.dgvhv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvhv_CellContentClick);
             // 
             // panel2
             // 

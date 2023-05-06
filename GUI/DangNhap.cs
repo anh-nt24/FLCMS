@@ -100,5 +100,10 @@ namespace GUI
         {
             this.Close();
         }
+
+        private void txtten_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
