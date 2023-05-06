@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.lbmk = new System.Windows.Forms.Label();
             this.lbdn = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@
             this.txtmk = new System.Windows.Forms.TextBox();
             this.txtten = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,11 +67,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.Image = global::GUI.Properties.Resources._343941574_169911992700384_5311502437906046923_n;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button1.Location = new System.Drawing.Point(484, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 44);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Thoát";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lbmk
             // 
             this.lbmk.AutoSize = true;
+            this.lbmk.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lbmk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbmk.Location = new System.Drawing.Point(306, 252);
+            this.lbmk.Location = new System.Drawing.Point(328, 263);
             this.lbmk.Name = "lbmk";
             this.lbmk.Size = new System.Drawing.Size(61, 22);
             this.lbmk.TabIndex = 11;
@@ -80,8 +95,9 @@
             // lbdn
             // 
             this.lbdn.AutoSize = true;
+            this.lbdn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lbdn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbdn.Location = new System.Drawing.Point(306, 184);
+            this.lbdn.Location = new System.Drawing.Point(328, 195);
             this.lbdn.Name = "lbdn";
             this.lbdn.Size = new System.Drawing.Size(61, 22);
             this.lbdn.TabIndex = 10;
@@ -92,7 +108,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox2.Image = global::GUI.Properties.Resources.padlock;
             this.pictureBox2.InitialImage = global::GUI.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(239, 212);
+            this.pictureBox2.Location = new System.Drawing.Point(261, 223);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(49, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +120,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.Image = global::GUI.Properties.Resources.user;
             this.pictureBox1.InitialImage = global::GUI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(239, 144);
+            this.pictureBox1.Location = new System.Drawing.Point(261, 155);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,7 +133,7 @@
             this.btndn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btndn.Image = global::GUI.Properties.Resources._343941574_169911992700384_5311502437906046923_n;
             this.btndn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btndn.Location = new System.Drawing.Point(310, 334);
+            this.btndn.Location = new System.Drawing.Point(332, 345);
             this.btndn.Name = "btndn";
             this.btndn.Size = new System.Drawing.Size(123, 44);
             this.btndn.TabIndex = 7;
@@ -131,7 +147,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.linkLabel1.Image = global::GUI.Properties.Resources._343941574_169911992700384_5311502437906046923_n;
             this.linkLabel1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.linkLabel1.Location = new System.Drawing.Point(438, 288);
+            this.linkLabel1.Location = new System.Drawing.Point(460, 299);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(134, 22);
             this.linkLabel1.TabIndex = 6;
@@ -144,7 +160,7 @@
             this.cbmk.AutoSize = true;
             this.cbmk.BackgroundImage = global::GUI.Properties.Resources._343941574_169911992700384_5311502437906046923_n;
             this.cbmk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbmk.Location = new System.Drawing.Point(233, 288);
+            this.cbmk.Location = new System.Drawing.Point(255, 299);
             this.cbmk.Name = "cbmk";
             this.cbmk.Size = new System.Drawing.Size(169, 26);
             this.cbmk.TabIndex = 5;
@@ -154,7 +170,7 @@
             // 
             // txtmk
             // 
-            this.txtmk.Location = new System.Drawing.Point(308, 212);
+            this.txtmk.Location = new System.Drawing.Point(330, 223);
             this.txtmk.Multiline = true;
             this.txtmk.Name = "txtmk";
             this.txtmk.Size = new System.Drawing.Size(277, 34);
@@ -163,7 +179,7 @@
             // 
             // txtten
             // 
-            this.txtten.Location = new System.Drawing.Point(308, 144);
+            this.txtten.Location = new System.Drawing.Point(330, 155);
             this.txtten.Multiline = true;
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(277, 34);
@@ -178,25 +194,11 @@
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Image = global::GUI.Properties.Resources._343941574_169911992700384_5311502437906046923_n;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label1.Location = new System.Drawing.Point(101, 60);
+            this.label1.Location = new System.Drawing.Point(165, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(602, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Nhập Ứng Dụng Quản Lý Trung Tâm Ngoại Ngữ";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Image = global::GUI.Properties.Resources._343941574_169911992700384_5311502437906046923_n;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(462, 334);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 44);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DangNhap
             // 

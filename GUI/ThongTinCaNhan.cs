@@ -20,6 +20,11 @@ namespace GUI
         }
         string Taikhoan = "", MatKhau = "", Quyen = "", MaND = "", HoTen = "", DiaChi = "", Sdt = "", NgaySinh = "", ViTriLamViec = "", Email = "";
 
+        private void txtquyen_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public ThongTinCaNhan(string mand, string hoten, string diachi, string sdt, string taikhoan, string matkhau, string quyen, string ngaysinh, string vitrivieclam, string email)
         {
             InitializeComponent();
@@ -38,7 +43,6 @@ namespace GUI
             txtdiachi.Text = "" + DiaChi + "";
             txtsdt.Text= "" + Sdt + "";
             txttaikhoan.Text= "" + Taikhoan + "";
-            txtmk.Text= "" + MatKhau + "";
             txtquyen.Text= "" + Quyen + "";
             txtns.Text= "" + NgaySinh + "";
             txtchucvu.Text= "" + ViTriLamViec + "";

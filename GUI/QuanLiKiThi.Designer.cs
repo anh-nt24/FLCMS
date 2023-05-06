@@ -348,7 +348,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Name = "QuanLiKiThi";
-            this.Text = "QuanLiKiThi";
+            this.Text = "Quản Lí Kì Thi";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

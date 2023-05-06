@@ -348,7 +348,7 @@
             this.Controls.Add(this.groupBox1);
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "TrangChu";
-            this.Text = "GUI_TrangChu";
+            this.Text = "Trang Chủ";
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtmk = new System.Windows.Forms.Label();
             this.txtchucvu = new System.Windows.Forms.Label();
             this.txtquyen = new System.Windows.Forms.Label();
             this.txttaikhoan = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.txtmand = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,8 +55,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.txtmk);
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.Controls.Add(this.txtchucvu);
             this.panel1.Controls.Add(this.txtquyen);
             this.panel1.Controls.Add(this.txttaikhoan);
@@ -70,7 +67,6 @@
             this.panel1.Controls.Add(this.txtmand);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -85,17 +81,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(979, 425);
             this.panel1.TabIndex = 13;
-            // 
-            // txtmk
-            // 
-            this.txtmk.AutoSize = true;
-            this.txtmk.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtmk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtmk.Location = new System.Drawing.Point(725, 175);
-            this.txtmk.Name = "txtmk";
-            this.txtmk.Size = new System.Drawing.Size(22, 23);
-            this.txtmk.TabIndex = 84;
-            this.txtmk.Text = "tt";
             // 
             // txtchucvu
             // 
@@ -118,6 +103,7 @@
             this.txtquyen.Size = new System.Drawing.Size(176, 23);
             this.txtquyen.TabIndex = 82;
             this.txtquyen.Text = "Thông Tin Cá Nhân";
+            this.txtquyen.Click += new System.EventHandler(this.txtquyen_Click);
             // 
             // txttaikhoan
             // 
@@ -216,17 +202,6 @@
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(657, 182);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 16);
-            this.label10.TabIndex = 64;
-            this.label10.Text = "Mật khẩu";
             // 
             // label9
             // 
@@ -334,7 +309,7 @@
             this.ClientSize = new System.Drawing.Size(981, 429);
             this.Controls.Add(this.panel1);
             this.Name = "ThongTinCaNhan";
-            this.Text = "ThongTinCaNhan";
+            this.Text = "Thông Tin Cá Nhân";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -346,7 +321,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -362,7 +336,6 @@
         private System.Windows.Forms.Label txtdiachi;
         private System.Windows.Forms.Label txthoten;
         private System.Windows.Forms.Label txtmand;
-        private System.Windows.Forms.Label txtmk;
         private System.Windows.Forms.Label txtchucvu;
         private System.Windows.Forms.Label txtquyen;
         private System.Windows.Forms.Label txttaikhoan;

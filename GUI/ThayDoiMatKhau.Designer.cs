@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.matkhau = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbnote = new System.Windows.Forms.Label();
             this.btndoimk = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtmk2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtmk1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.matkhau.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,17 @@
             this.matkhau.TabIndex = 11;
             this.matkhau.TabStop = false;
             this.matkhau.Text = "Mật khẩu mới";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources._return;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 206);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 73;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbnote
             // 
@@ -119,17 +130,6 @@
             this.txtmk1.TabIndex = 6;
             this.txtmk1.Leave += new System.EventHandler(this.txtmk1_leave);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources._return;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 206);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 73;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // ThayDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,7 +137,7 @@
             this.ClientSize = new System.Drawing.Size(618, 275);
             this.Controls.Add(this.matkhau);
             this.Name = "ThayDoiMatKhau";
-            this.Text = "ThayDoiMatKhau";
+            this.Text = "Thay Đổi Mật Khẩu";
             this.matkhau.ResumeLayout(false);
             this.matkhau.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
