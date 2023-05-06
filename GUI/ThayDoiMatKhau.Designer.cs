@@ -81,7 +81,7 @@
             // 
             // btndoimk
             // 
-            this.btndoimk.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btndoimk.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btndoimk.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btndoimk.Location = new System.Drawing.Point(312, 203);
             this.btndoimk.Name = "btndoimk";
